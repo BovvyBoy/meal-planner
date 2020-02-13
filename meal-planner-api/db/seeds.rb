@@ -15,7 +15,7 @@ weekshop = Planner.create(user_id: 1, name: "Weekly Shop", duration: 7)
 
 #lasagna = Recipe.create(name: "Lasagne", origin: "Italy", instructions: "please cook", image: "http://imgsource.com", video: "http://vidsource.com", category: "Pasta")
 
-danweekshop = PlannerRecipe.create(recipe_id: 1, planner_id: 1)
+
 
 
 
@@ -48,5 +48,5 @@ full_meals.each do |info|
 end
 
 
-
+danweekshop = PlannerRecipe.create(recipe_id: 1, planner_id: 1)
 
