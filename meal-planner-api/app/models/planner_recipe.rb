@@ -1,4 +1,4 @@
 class PlannerRecipe < ApplicationRecord
-    has_many :planners
-    has_many :recipes
+    belongs_to :planners
+    belongs_to :recipes
 end

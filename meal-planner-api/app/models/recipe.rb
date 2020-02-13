@@ -1,4 +1,4 @@
 class Recipe < ApplicationRecord
-    belongs_to :planner_recipes
-    has_many :planners, through: :planner_recipe
+    has_many :planner_recipes
+    has_many :planners, through: :planner_recipes
 end
