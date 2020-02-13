@@ -1,4 +1,5 @@
-require ‘rest-client’
+require 'rest-client'
+require 'json'
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
@@ -17,8 +18,12 @@ lasagna = Recipe.create(name: "Lasagne", origin: "Italy", instructions: "please 
 danweekshop = PlannerRecipe.create(recipe_id: 1, planner_id: 1)
 
 
-meal_cats = ["Beef", "Breakfast", "Chicken", "Dessert", "Goat", "Lamb", "Miscellaneous", "Pasta", "Pork", "Seafood", "Side", "Starter", "Vegan", "Vegetarian"]
 
+meal_cats = ["Beef", "Breakfast", "Chicken", "Dessert", "Goat", "Lamb", "Miscellaneous", "Pasta", "Pork", "Seafood", "Side", "Starter", "Vegan", "Vegetarian"]
+meals = []
 meal_cats.each do |cat|
-    RestClient.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=#{cat}") 
+    res = RestClient.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=#{cat}")
+    meal_parse = JSON.parse(res)
+    meals << meal_parse
 end
+
