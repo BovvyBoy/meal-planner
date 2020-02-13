@@ -908,3 +908,6 @@ Migrating to CreateRecipes (20200213130538)
   [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mPlanner Load (0.3ms)[0m  [1m[34mSELECT "planners".* FROM "planners" LIMIT $1[0m  [["LIMIT", 11]]
   [1m[36mPlannerRecipe Load (0.5ms)[0m  [1m[34mSELECT "planner_recipes".* FROM "planner_recipes" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPlanner Load (0.3ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" INNER JOIN "planner_recipes" ON "recipes"."id" = "planner_recipes"."recipe_id" INNER JOIN "planners" ON "planner_recipes"."planner_id" = "planners"."id" WHERE "planners"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
