@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :planners
   has_many :recipe_planners, through: :planners
-  has_many :recipes, through:, :recipe_planners  
+  has_many :recipes, through: :recipe_planners  
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

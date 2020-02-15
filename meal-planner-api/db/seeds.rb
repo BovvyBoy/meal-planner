@@ -9,7 +9,7 @@ require 'json'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-dannyb = User.create(name: "Dan", username: "bovvyboy", email: "dan@mail.com", password_digest: "password")
+dannyb = User.create(name: "Dan", username: "bovvyboy", email: "dan@mail.com", password: "password")
 
 weekshop = Planner.create(user_id: 1, name: "Weekly Shop", duration: 7)
 
