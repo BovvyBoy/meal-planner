@@ -32,7 +32,7 @@ class ApplicationController < ActionController::API
     end
 
     def not_found
-        render json {message: "Resource Not Found"}, status: 404
+        render json: {message: "Resource Not Found"}, status: 404
     end
     
 end

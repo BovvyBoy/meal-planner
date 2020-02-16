@@ -178,3 +178,101 @@
   [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 4], ["name", "Timika Bauch"], ["duration", 5], ["created_at", "2020-02-16 12:14:08.446364"], ["updated_at", "2020-02-16 12:14:08.446364"]]
   [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$WQwKGkDbi/JAlRMK7GOAb.SmVkkFccYjHQKMejT1UkhK/NueSaGuK"], ["name", "Miss Tari Gleason"], ["username", "Veda Klein"], ["created_at", "2020-02-16 12:19:06.902973"], ["updated_at", "2020-02-16 12:19:06.902973"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 5], ["name", "Nguyet Funk"], ["duration", 1], ["created_at", "2020-02-16 12:19:06.904255"], ["updated_at", "2020-02-16 12:19:06.904255"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 5], ["name", "Sung Bahringer"], ["duration", 0], ["created_at", "2020-02-16 12:19:06.904977"], ["updated_at", "2020-02-16 12:19:06.904977"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$qO1cJiiM8HWx33qLbkO1JuMeO7RPLnIcj40rCrwW8e0grHAxA1Jem"], ["name", "Mr. Lionel McGlynn"], ["username", "Miss Shaunta Jerde"], ["created_at", "2020-02-16 12:19:06.909583"], ["updated_at", "2020-02-16 12:19:06.909583"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 6], ["name", "Cliff Rau IV"], ["duration", 2], ["created_at", "2020-02-16 12:19:06.910428"], ["updated_at", "2020-02-16 12:19:06.910428"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 6], ["name", "Geoffrey Rowe"], ["duration", 4], ["created_at", "2020-02-16 12:19:06.911034"], ["updated_at", "2020-02-16 12:19:06.911034"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/signup" for 127.0.0.1 at 2020-02-16 12:27:09 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/signup" for 127.0.0.1 at 2020-02-16 12:27:09 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/signup" for 127.0.0.1 at 2020-02-16 12:27:09 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$JGZUOvi7B6nh/iz.QgnvX.KIFeOcak5tHkrjjvby55slbh6aaZpaW"], ["name", "Ronnie Macejkovic"], ["username", "Debi Yundt"], ["created_at", "2020-02-16 12:27:10.029712"], ["updated_at", "2020-02-16 12:27:10.029712"]]
+  [1m[36mPlanner Create (0.3ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 7], ["name", "Donn Grant"], ["duration", 6], ["created_at", "2020-02-16 12:27:10.031057"], ["updated_at", "2020-02-16 12:27:10.031057"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 7], ["name", "Oliver Bayer"], ["duration", 3], ["created_at", "2020-02-16 12:27:10.031777"], ["updated_at", "2020-02-16 12:27:10.031777"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/signup" for 127.0.0.1 at 2020-02-16 12:27:10 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$gdk0uaqzz4tk9aAUiXTqi.LzprLTRNaZ2qwumCYK4nfEvSEcQ7lVG"], ["name", "Sook Berge MD"], ["username", "Dr. Juan Raynor"], ["created_at", "2020-02-16 12:27:10.041126"], ["updated_at", "2020-02-16 12:27:10.041126"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 8], ["name", "Numbers Cruickshank"], ["duration", 3], ["created_at", "2020-02-16 12:27:10.041934"], ["updated_at", "2020-02-16 12:27:10.041934"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 8], ["name", "Annice Kozey"], ["duration", 0], ["created_at", "2020-02-16 12:27:10.042507"], ["updated_at", "2020-02-16 12:27:10.042507"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/signup" for 127.0.0.1 at 2020-02-16 12:27:10 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$sUhdNdqfHzOsSdMKDCVu3euRqs1w4ZzZPPqvnrnUB1OpNjN8O6pSy"], ["name", "Anthony Graham"], ["username", "Milford Barrows"], ["created_at", "2020-02-16 12:30:14.482865"], ["updated_at", "2020-02-16 12:30:14.482865"]]
+  [1m[36mPlanner Create (0.3ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 9], ["name", "Alaine Wyman"], ["duration", 6], ["created_at", "2020-02-16 12:30:14.484262"], ["updated_at", "2020-02-16 12:30:14.484262"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 9], ["name", "Luz Pacocha Sr."], ["duration", 3], ["created_at", "2020-02-16 12:30:14.485058"], ["updated_at", "2020-02-16 12:30:14.485058"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$y1dUfVgE9H6rsYf7cXp.D.8c3qnBPo2SQOqo/kIG0JgkY0bANfsoW"], ["name", "Waylon Waelchi V"], ["username", "Rosenda Funk PhD"], ["created_at", "2020-02-16 12:30:14.488910"], ["updated_at", "2020-02-16 12:30:14.488910"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 10], ["name", "Manuela Sipes I"], ["duration", 5], ["created_at", "2020-02-16 12:30:14.489708"], ["updated_at", "2020-02-16 12:30:14.489708"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 10], ["name", "Wilfredo Berge"], ["duration", 1], ["created_at", "2020-02-16 12:30:14.490290"], ["updated_at", "2020-02-16 12:30:14.490290"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-16 12:30:50 +0000
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-16 12:30:50 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-16 12:30:50 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$vtjbblN3v/V5M9pwU4CPR.CeJPeOvA8e2NkGbjfcx6JGXCiYEFz6C"], ["name", "Glenna Rogahn"], ["username", "Luisa Graham"], ["created_at", "2020-02-16 12:30:50.578483"], ["updated_at", "2020-02-16 12:30:50.578483"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 11], ["name", "Jeramy Romaguera MD"], ["duration", 3], ["created_at", "2020-02-16 12:30:50.579727"], ["updated_at", "2020-02-16 12:30:50.579727"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 11], ["name", "Dr. Ignacio Carter"], ["duration", 6], ["created_at", "2020-02-16 12:30:50.580328"], ["updated_at", "2020-02-16 12:30:50.580328"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-16 12:30:50 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$xEBhFwmGLrT5WDf14qC4X.A/ewJILl0Rc2RXA1FUuBpZMd5NEXaAy"], ["name", "Margy DuBuque"], ["username", "Rodrigo Moore"], ["created_at", "2020-02-16 12:30:50.590474"], ["updated_at", "2020-02-16 12:30:50.590474"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 12], ["name", "Noah Zemlak"], ["duration", 3], ["created_at", "2020-02-16 12:30:50.591137"], ["updated_at", "2020-02-16 12:30:50.591137"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 12], ["name", "Dr. Anisa Cassin"], ["duration", 6], ["created_at", "2020-02-16 12:30:50.591742"], ["updated_at", "2020-02-16 12:30:50.591742"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-16 12:30:50 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
