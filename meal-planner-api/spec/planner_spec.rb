@@ -25,30 +25,30 @@ RSpec.describe 'GET /planners', type: :request do
 
     context 'you must be authorised to perform CRUD on planners' do
         it 'doesnt allow any unauthorised requests to planners controller' do
-            get '/planners'
+            get '/api/v1/planners'
             expect(response.status).to eq 401
-            get '/planners/1'
+            get '/api/v1/planners/1'
             expect(response.status).to eq 401
-            post '/planners', params: { planner: {name: 'hello', duration: 2}}
+            post '/api/v1/planners', params: { planner: {name: "hello", duration: 2}}
             expect(response.status).to eq 401
-            patch 'planners/1', params: {planner: {name: yes}}
+            patch '/api/v1/planners/1', params: {planner: {name: "yes"}}
             expect(response.status).to eq 401
-            delete '/planners/1'
+            delete '/api/v1/planners/1'
             expect(response.status).to eq 401
         end
     end
 
     context 'authenticated users can only create/update their own resources' do
-        let(:plannerURL) {'/planners'}
+        let(:plannersURL) {'/api/v1/planners'}
         before do
-            post '/login', params: params
+            post '/api/v1/login', params: params
             @token = response.headers['Authorization']
-            post '/login', params: params2
+            post '/api/v1/login', params: params2
             @token2 = response.headers['Authorization']
         end
 
         it 'returns 404 for unfound planners' do
-            get '/planners/1000', headers: { Authorization: @token}
+            get '/api/v1/planners/1000', headers: { Authorization: @token}
             expect(response.status).to eq 404
         end
 
@@ -67,25 +67,25 @@ RSpec.describe 'GET /planners', type: :request do
         end
 
         it 'prevents an user from updating a planner which is not theirs' do
-            patch '/planners/3', params: {planner: {name: "yes"}}, headers: {Authorization: @token}
+            patch '/api/v1/planners/3', params: {planner: {name: "yes"}}, headers: {Authorization: @token}
             expect(response.status).to eq 401
         end
 
         it 'allows a user to update their planner' do
-            patch '/planners/1', params: {planner: {name: "hello"}}, headers: {Authorization: @token}
-            expext(response.status).to eq 200
+            patch '/api/v1/planners/1', params: {planner: {name: "hello"}}, headers: {Authorization: @token}
+            expect(response.status).to eq 200
             body = JSON.parse(response.body)
             expect(body["name"]).to eq("hello")
         end
 
         it 'stops someone who is not the user from deleting planner' do
-            delete '/planners/3', headers: {Authorization: @token}
+            delete '/api/v1/planners/3', headers: {Authorization: @token}
             expect(response.status).to eq 401
         end
 
         it 'prevents somone from visiting a planner which isnt theirs' do
-            get '/planners/1', headers: {Authorization: @token2}
-            expect(reponse.status).to eq 401
+            get '/api/v1/planners/1', headers: {Authorization: @token2}
+            expect(response.status).to eq 401
         end
     end
 end

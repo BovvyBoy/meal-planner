@@ -1,6 +1,6 @@
 class Api::V1::PlannersController < ApplicationController
 
-    before_action :authenticate_user!
+    before_action :authenticate_api_v1_user!
 
     def index
         planners = current_user.planners
