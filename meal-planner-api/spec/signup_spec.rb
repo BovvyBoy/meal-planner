@@ -5,7 +5,6 @@ RSpec.describe 'POST/signup', type: :request do
     let(:params) do
         {
             user: {
-                username: 'dandaman',
                 email: 'dan@mail.com',
                 password: 'password'
             }
@@ -32,7 +31,7 @@ RSpec.describe 'POST/signup', type: :request do
 
     context 'when a user already exists' do
         before do
-            Fabricate :user, email: params[:user][:email], username: params[:user][:username]
+            Fabricate :user, email: params[:user][:email]
             post url, params: params
         end
 
