@@ -20,7 +20,6 @@ RSpec.describe 'POST/signup', type: :request do
         
         it 'returns a new user' do
             puts response.body
-
         end
 
         it 'returns a JWT' do

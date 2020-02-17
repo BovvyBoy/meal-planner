@@ -5,9 +5,7 @@ RSpec.describe 'POST/login', type: :request do
     let (:url) {'/api/v1/login'}
     let (:params) do
         {
-            user: {
-                name: user.name,
-                username: user.username,
+            user: { 
                 email: user.email,
                 password: user.password
             }
