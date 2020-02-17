@@ -5548,3 +5548,25 @@ Processing by Api::V1::SessionsController#create as */*
 Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 271)
 
 
+Started GET "/" for ::1 at 2020-02-17 11:45:22 +0000
+Processing by HomeController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 116)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-02-17 11:46:42 +0000
+Processing by Api::V1::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "name"=>"Dan", "username"=>"bovvyboy", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"dan@mail.com", "name"=>"Dan", "username"=>"bovvyboy", "password"=>"[FILTERED]"}}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 236)
+
+
+Started GET "/" for ::1 at 2020-02-17 11:55:40 +0000
+Processing by HomeController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 88)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-02-17 11:56:26 +0000
+Processing by Api::V1::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 124)
+
+

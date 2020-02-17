@@ -1048,3 +1048,979 @@ Processing by Api::V1::RegistrationsController#create as HTML
   [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
 Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 777)
   [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "minh_lakin@bartoletti.info"], ["encrypted_password", "$2a$04$4i5skP6XyP1ydzNK4T9KEeRmfnwb/FzfJo9rfRdYLiMgpmZ00H4HS"], ["name", "Jeannie Schroeder I"], ["username", "Lily Funk"], ["created_at", "2020-02-17 14:16:36.669744"], ["updated_at", "2020-02-17 14:16:36.669744"]]
+  [1m[36mPlanner Create (0.3ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 99], ["name", "Pete Monahan"], ["duration", 0], ["created_at", "2020-02-17 14:16:36.671146"], ["updated_at", "2020-02-17 14:16:36.671146"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 99], ["name", "Eduardo Bahringer"], ["duration", 5], ["created_at", "2020-02-17 14:16:36.671902"], ["updated_at", "2020-02-17 14:16:36.671902"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"minh_lakin@bartoletti.info", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 273)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "ricardo@lang.net"], ["encrypted_password", "$2a$04$IyyKys/15ejEn3nOBWWZV.27KaGy.ON3u5drNJM.ApuP6ljVdNjbi"], ["name", "Dr. Chung Gutmann"], ["username", "Mr. Jong Borer"], ["created_at", "2020-02-17 14:16:36.695352"], ["updated_at", "2020-02-17 14:16:36.695352"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 100], ["name", "Mrs. Tomi Bruen"], ["duration", 5], ["created_at", "2020-02-17 14:16:36.696199"], ["updated_at", "2020-02-17 14:16:36.696199"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 100], ["name", "Loyd Kerluke"], ["duration", 5], ["created_at", "2020-02-17 14:16:36.696768"], ["updated_at", "2020-02-17 14:16:36.696768"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"ricardo@lang.net", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "fred.kirlin@wuckertrippin.biz"], ["encrypted_password", "$2a$04$FYIktoJYwXfanpAxiY9jRORToMKuP548YgF5QcyJ5c0N/yuNB4.3S"], ["name", "Ms. Hassan Frami"], ["username", "Angela O'Conner"], ["created_at", "2020-02-17 14:16:36.706285"], ["updated_at", "2020-02-17 14:16:36.706285"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 101], ["name", "Deedra Hirthe"], ["duration", 3], ["created_at", "2020-02-17 14:16:36.706994"], ["updated_at", "2020-02-17 14:16:36.706994"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 101], ["name", "Joseph Auer Jr."], ["duration", 3], ["created_at", "2020-02-17 14:16:36.707475"], ["updated_at", "2020-02-17 14:16:36.707475"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"fred.kirlin@wuckertrippin.biz", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+Processing by Api::V1::SessionsController#create as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started DELETE "/api/v1/logout" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+Processing by Api::V1::SessionsController#destroy as HTML
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 65)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/planners" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+Processing by Api::V1::PlannersController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 87)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "charlie@tremblayhyatt.name"], ["encrypted_password", "$2a$04$E10wOyjCcSiKIHRrtpFAEudeiBxac5HxqQj81GZG3FHyA9ZOoZ7s2"], ["name", "Bert Mitchell"], ["username", "Melania Weissnat"], ["created_at", "2020-02-17 14:16:36.734842"], ["updated_at", "2020-02-17 14:16:36.734842"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 102], ["name", "Yong Runolfsdottir"], ["duration", 2], ["created_at", "2020-02-17 14:16:36.735866"], ["updated_at", "2020-02-17 14:16:36.735866"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 102], ["name", "Johnnie Hagenes"], ["duration", 0], ["created_at", "2020-02-17 14:16:36.736475"], ["updated_at", "2020-02-17 14:16:36.736475"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"charlie@tremblayhyatt.name", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/planners" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "barton_bashirian@little.org"], ["encrypted_password", "$2a$04$httjO2dwWD/oVYUojGR24.zx1kn2ZYCwDUmIhQe5MyG7GMnEu4rUS"], ["name", "Emmett Hartmann DDS"], ["username", "Chelsey Gusikowski"], ["created_at", "2020-02-17 14:16:36.752841"], ["updated_at", "2020-02-17 14:16:36.752841"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 103], ["name", "Mrs. Carmine Klocko"], ["duration", 6], ["created_at", "2020-02-17 14:16:36.753698"], ["updated_at", "2020-02-17 14:16:36.753698"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 103], ["name", "Julio Kuhn"], ["duration", 1], ["created_at", "2020-02-17 14:16:36.754290"], ["updated_at", "2020-02-17 14:16:36.754290"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "rebeca.bartoletti@beerullrich.name"], ["encrypted_password", "$2a$04$atBM9PRXbPtZ.ArI2awvy.JyqUg76uNGT/xGjXS7Tdo0v5pSom1Jm"], ["name", "Nicolasa Schumm"], ["username", "Mrs. Frederick Leannon"], ["created_at", "2020-02-17 14:16:36.762998"], ["updated_at", "2020-02-17 14:16:36.762998"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 104], ["name", "Gale Reichert"], ["duration", 6], ["created_at", "2020-02-17 14:16:36.763806"], ["updated_at", "2020-02-17 14:16:36.763806"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 104], ["name", "Jeremiah Dooley"], ["duration", 4], ["created_at", "2020-02-17 14:16:36.764389"], ["updated_at", "2020-02-17 14:16:36.764389"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "garth@senger.info"], ["encrypted_password", "$2a$04$PzRUnk9gu4.FcLDN/tqhQeJQK.HbiWHZXlncZqI6xXbOyQQphaMZS"], ["name", "Heath Wilderman"], ["username", "Mrs. Joshua Jacobson"], ["created_at", "2020-02-17 14:16:36.773439"], ["updated_at", "2020-02-17 14:16:36.773439"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 105], ["name", "Benton Miller"], ["duration", 2], ["created_at", "2020-02-17 14:16:36.774214"], ["updated_at", "2020-02-17 14:16:36.774214"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 105], ["name", "Miss Kellye Bergnaum"], ["duration", 6], ["created_at", "2020-02-17 14:16:36.774824"], ["updated_at", "2020-02-17 14:16:36.774824"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "kerry.schaden@klingmiller.biz"], ["encrypted_password", "$2a$04$f1uwHp/h/2sYof8Sj2PIruE03AFPuKPI2CJsUdh4nIP/bDYSYiPk6"], ["name", "Zack Macejkovic"], ["username", "Mr. Gail Frami"], ["created_at", "2020-02-17 14:16:36.783272"], ["updated_at", "2020-02-17 14:16:36.783272"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 106], ["name", "Kathe Paucek"], ["duration", 0], ["created_at", "2020-02-17 14:16:36.783964"], ["updated_at", "2020-02-17 14:16:36.783964"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 106], ["name", "Fredric Jaskolski IV"], ["duration", 5], ["created_at", "2020-02-17 14:16:36.784508"], ["updated_at", "2020-02-17 14:16:36.784508"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "carl@reichert.com"], ["encrypted_password", "$2a$04$3Ln.aqCHD5XqxvDxKqGsjOjHiNLk8vjo/lPx6hseDeyQBIPg3M/fi"], ["name", "Tempie Watsica"], ["username", "Flor Pouros"], ["created_at", "2020-02-17 14:16:36.792125"], ["updated_at", "2020-02-17 14:16:36.792125"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 107], ["name", "Mrs. Rey Boyer"], ["duration", 0], ["created_at", "2020-02-17 14:16:36.792827"], ["updated_at", "2020-02-17 14:16:36.792827"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 107], ["name", "Mrs. Linnea Heaney"], ["duration", 5], ["created_at", "2020-02-17 14:16:36.793364"], ["updated_at", "2020-02-17 14:16:36.793364"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "antony.gorczany@considine.io"], ["encrypted_password", "$2a$04$h5Z5WvPHQ4tcKy8VOIAucOGNjZdX/9xsJ2dk0XgdUn.4ftPa53XDu"], ["name", "Nicky Renner"], ["username", "Adolph McKenzie"], ["created_at", "2020-02-17 14:16:36.800730"], ["updated_at", "2020-02-17 14:16:36.800730"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 108], ["name", "Alfredo Ondricka"], ["duration", 1], ["created_at", "2020-02-17 14:16:36.801379"], ["updated_at", "2020-02-17 14:16:36.801379"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 108], ["name", "Sang Friesen"], ["duration", 5], ["created_at", "2020-02-17 14:16:36.801912"], ["updated_at", "2020-02-17 14:16:36.801912"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:16:36.813333"], ["updated_at", "2020-02-17 14:16:36.813333"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.2ms | Allocations: 1157)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:16:36.820440"], ["updated_at", "2020-02-17 14:16:36.820440"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.5ms | Allocations: 777)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:16:36.827452"], ["updated_at", "2020-02-17 14:16:36.827452"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 777)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$sR4obt0cIArmNEOu1rvkieDVt6qvfDR3OZUtnkA/jRyCAYX03IaRa"], ["name", "Marcelene Hegmann"], ["username", "Fabian Kozey"], ["created_at", "2020-02-17 14:16:36.831111"], ["updated_at", "2020-02-17 14:16:36.831111"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 112], ["name", "Jackie Kunze I"], ["duration", 2], ["created_at", "2020-02-17 14:16:36.843080"], ["updated_at", "2020-02-17 14:16:36.843080"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 112], ["name", "Mr. Roselee Herzog"], ["duration", 6], ["created_at", "2020-02-17 14:16:36.843789"], ["updated_at", "2020-02-17 14:16:36.843789"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:16:36.850475"], ["updated_at", "2020-02-17 14:16:36.850475"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 782)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$CCA2hPbDbejZjdd83TDBzu2vy.K2aURArH4Ckj7UQttFalAvi/osC"], ["name", "Edgar Bergstrom"], ["username", "Raven Orn"], ["created_at", "2020-02-17 14:16:36.855945"], ["updated_at", "2020-02-17 14:16:36.855945"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 114], ["name", "Carla Johns"], ["duration", 4], ["created_at", "2020-02-17 14:16:36.856835"], ["updated_at", "2020-02-17 14:16:36.856835"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 114], ["name", "Bob Kirlin"], ["duration", 0], ["created_at", "2020-02-17 14:16:36.857418"], ["updated_at", "2020-02-17 14:16:36.857418"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:16:36 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:16:36.864108"], ["updated_at", "2020-02-17 14:16:36.864108"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.4ms | Allocations: 777)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "elvina.johnston@ankunding.biz"], ["encrypted_password", "$2a$04$krTlla4aOmRHIOUebgI/OOjSXTnfHYjB6Ujo5TRXerv1Wa1hQxqLy"], ["name", "Kimbery Zulauf"], ["username", "Wilson Kunze"], ["created_at", "2020-02-17 14:19:28.717141"], ["updated_at", "2020-02-17 14:19:28.717141"]]
+  [1m[36mPlanner Create (0.3ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 116], ["name", "Danyelle MacGyver"], ["duration", 5], ["created_at", "2020-02-17 14:19:28.718715"], ["updated_at", "2020-02-17 14:19:28.718715"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 116], ["name", "Elvia Murphy"], ["duration", 2], ["created_at", "2020-02-17 14:19:28.719495"], ["updated_at", "2020-02-17 14:19:28.719495"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"elvina.johnston@ankunding.biz", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 273)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "elyse@oconnerhyatt.name"], ["encrypted_password", "$2a$04$zeKdR3LP.mYYfNTkb8kHyukidKsuQBdLz0fDBqhhxV9B0pMhObxuW"], ["name", "Henry Friesen"], ["username", "Tracy Gulgowski I"], ["created_at", "2020-02-17 14:19:28.744162"], ["updated_at", "2020-02-17 14:19:28.744162"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 117], ["name", "Mr. Sunni Dibbert"], ["duration", 4], ["created_at", "2020-02-17 14:19:28.745091"], ["updated_at", "2020-02-17 14:19:28.745091"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 117], ["name", "Troy Ward"], ["duration", 5], ["created_at", "2020-02-17 14:19:28.745674"], ["updated_at", "2020-02-17 14:19:28.745674"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"elyse@oconnerhyatt.name", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "noble.rath@grimes.name"], ["encrypted_password", "$2a$04$nkzXEBjYpqZeqKiSGtv2a.A56JquimMziEeMjEnzln8eQGamaQOZm"], ["name", "Vanesa Kilback"], ["username", "Hank Renner"], ["created_at", "2020-02-17 14:19:28.755835"], ["updated_at", "2020-02-17 14:19:28.755835"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 118], ["name", "Verona McLaughlin"], ["duration", 4], ["created_at", "2020-02-17 14:19:28.756705"], ["updated_at", "2020-02-17 14:19:28.756705"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 118], ["name", "Shenna Schinner DVM"], ["duration", 2], ["created_at", "2020-02-17 14:19:28.757267"], ["updated_at", "2020-02-17 14:19:28.757267"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"noble.rath@grimes.name", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+Processing by Api::V1::SessionsController#create as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started DELETE "/api/v1/logout" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+Processing by Api::V1::SessionsController#destroy as HTML
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 65)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/planners" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+Processing by Api::V1::PlannersController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 87)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "claudio@kerluke.net"], ["encrypted_password", "$2a$04$iOpBfrQfGTUOTbdoxPmIFe5uYhJRPK9VVfdE9X5veWNYrhvypNXvi"], ["name", "Howard Wunsch II"], ["username", "Ned Sanford II"], ["created_at", "2020-02-17 14:19:28.784184"], ["updated_at", "2020-02-17 14:19:28.784184"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 119], ["name", "Ola Medhurst PhD"], ["duration", 4], ["created_at", "2020-02-17 14:19:28.785176"], ["updated_at", "2020-02-17 14:19:28.785176"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 119], ["name", "Joaquin Ryan"], ["duration", 2], ["created_at", "2020-02-17 14:19:28.785763"], ["updated_at", "2020-02-17 14:19:28.785763"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"claudio@kerluke.net", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/planners" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "salome_rogahn@heaney.com"], ["encrypted_password", "$2a$04$bVsjNB1IwhGC7V2ligZYWO69Tu.ETzFRSF33pLr0Z2QucQWwvagIC"], ["name", "Mrs. Elissa Schumm"], ["username", "Elton Nolan"], ["created_at", "2020-02-17 14:19:28.801773"], ["updated_at", "2020-02-17 14:19:28.801773"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 120], ["name", "Leia Mayert"], ["duration", 0], ["created_at", "2020-02-17 14:19:28.802656"], ["updated_at", "2020-02-17 14:19:28.802656"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 120], ["name", "Mrs. Delmar Orn"], ["duration", 6], ["created_at", "2020-02-17 14:19:28.803251"], ["updated_at", "2020-02-17 14:19:28.803251"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "larry@lockman.org"], ["encrypted_password", "$2a$04$zqCuQTEvplSsdSBFQZTiAuWrGdT42J/LOuxtCt83/N2Gz9GW/sxtS"], ["name", "Dr. Kristofer Bruen"], ["username", "Dr. Dorene Gislason"], ["created_at", "2020-02-17 14:19:28.811760"], ["updated_at", "2020-02-17 14:19:28.811760"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 121], ["name", "Hannelore Champlin PhD"], ["duration", 1], ["created_at", "2020-02-17 14:19:28.812457"], ["updated_at", "2020-02-17 14:19:28.812457"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 121], ["name", "Arnold King"], ["duration", 3], ["created_at", "2020-02-17 14:19:28.812992"], ["updated_at", "2020-02-17 14:19:28.812992"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "kiersten_nitzsche@faheyferry.info"], ["encrypted_password", "$2a$04$aD0qgEXW.yTBEZjlyPlbteN1J9G8B32IVSeeVDOhyf.PaYWfGtzma"], ["name", "Thanh Glover"], ["username", "Dr. Roderick Anderson"], ["created_at", "2020-02-17 14:19:28.820971"], ["updated_at", "2020-02-17 14:19:28.820971"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 122], ["name", "Chloe Waelchi"], ["duration", 0], ["created_at", "2020-02-17 14:19:28.821700"], ["updated_at", "2020-02-17 14:19:28.821700"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 122], ["name", "Dr. Scot Kertzmann"], ["duration", 6], ["created_at", "2020-02-17 14:19:28.822290"], ["updated_at", "2020-02-17 14:19:28.822290"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "ayanna_hoppe@ryan.org"], ["encrypted_password", "$2a$04$9y1w8vxkecni55wp.oN3nO6HHA2u9L0M1DQE1pDhN0cnk6YNMWsHW"], ["name", "Mitchell Reynolds"], ["username", "Milton Jones"], ["created_at", "2020-02-17 14:19:28.830453"], ["updated_at", "2020-02-17 14:19:28.830453"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 123], ["name", "Ryann Oberbrunner"], ["duration", 4], ["created_at", "2020-02-17 14:19:28.831253"], ["updated_at", "2020-02-17 14:19:28.831253"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 123], ["name", "Miss Donald Heidenreich"], ["duration", 3], ["created_at", "2020-02-17 14:19:28.831839"], ["updated_at", "2020-02-17 14:19:28.831839"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "connie.dooley@cummerata.com"], ["encrypted_password", "$2a$04$w2vFJHD2PN71gegzvr8SAep4J9EDHVCcQXdQzOCPUl5MjN.efyApa"], ["name", "January Towne II"], ["username", "Stacy Donnelly V"], ["created_at", "2020-02-17 14:19:28.841023"], ["updated_at", "2020-02-17 14:19:28.841023"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 124], ["name", "Michal Skiles"], ["duration", 4], ["created_at", "2020-02-17 14:19:28.841814"], ["updated_at", "2020-02-17 14:19:28.841814"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 124], ["name", "Neville Beatty"], ["duration", 1], ["created_at", "2020-02-17 14:19:28.842393"], ["updated_at", "2020-02-17 14:19:28.842393"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "pierre@monahan.info"], ["encrypted_password", "$2a$04$0wsCF0IbwoEOtyEnY.JhNOLpORhBfIxM034ajA/VsXteeQ8HkVlWe"], ["name", "Fletcher Gleichner"], ["username", "Maud Steuber"], ["created_at", "2020-02-17 14:19:28.850672"], ["updated_at", "2020-02-17 14:19:28.850672"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 125], ["name", "Harris Erdman DVM"], ["duration", 1], ["created_at", "2020-02-17 14:19:28.851399"], ["updated_at", "2020-02-17 14:19:28.851399"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 125], ["name", "Blair Hermiston I"], ["duration", 2], ["created_at", "2020-02-17 14:19:28.851916"], ["updated_at", "2020-02-17 14:19:28.851916"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:19:28.863821"], ["updated_at", "2020-02-17 14:19:28.863821"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.5ms | Allocations: 2930)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:19:28.875926"], ["updated_at", "2020-02-17 14:19:28.875926"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 2572)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:19:28.884734"], ["updated_at", "2020-02-17 14:19:28.884734"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 2572)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$nPx6twaOX1GruVzsnsMXs.bEJTJS0L/Q0tldcLpMIiyTrzjO7xsU6"], ["name", "Jamie Keebler"], ["username", "James Kuhic III"], ["created_at", "2020-02-17 14:19:28.891152"], ["updated_at", "2020-02-17 14:19:28.891152"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 129], ["name", "Mr. Earnest Nitzsche"], ["duration", 2], ["created_at", "2020-02-17 14:19:28.891903"], ["updated_at", "2020-02-17 14:19:28.891903"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 129], ["name", "Augustine Parisian"], ["duration", 6], ["created_at", "2020-02-17 14:19:28.892519"], ["updated_at", "2020-02-17 14:19:28.892519"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:19:28.899216"], ["updated_at", "2020-02-17 14:19:28.899216"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 2572)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$8zD4k8PNlVI5h/.vcFNRWOgMhs4yfWyi0DxhJHE5l0TI./ENv3VD."], ["name", "Mathilde Leuschke"], ["username", "Miss Marcelene Watsica"], ["created_at", "2020-02-17 14:19:28.905670"], ["updated_at", "2020-02-17 14:19:28.905670"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 131], ["name", "Ivory Streich"], ["duration", 3], ["created_at", "2020-02-17 14:19:28.906381"], ["updated_at", "2020-02-17 14:19:28.906381"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 131], ["name", "Lemuel Satterfield"], ["duration", 4], ["created_at", "2020-02-17 14:19:28.906929"], ["updated_at", "2020-02-17 14:19:28.906929"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:19:28 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:19:28.925664"], ["updated_at", "2020-02-17 14:19:28.925664"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 2582)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "wesley_orn@nitzsche.info"], ["encrypted_password", "$2a$04$R1oOR7CqIp0SfMiWqbSTpOwYIlYM3IBFucVh430/O.rp/.LmaDxeq"], ["name", "Marco Schneider"], ["username", "Tama Schimmel DDS"], ["created_at", "2020-02-17 14:20:07.474451"], ["updated_at", "2020-02-17 14:20:07.474451"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 133], ["name", "Sherwood Fay"], ["duration", 2], ["created_at", "2020-02-17 14:20:07.475677"], ["updated_at", "2020-02-17 14:20:07.475677"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 133], ["name", "Anderson Flatley"], ["duration", 1], ["created_at", "2020-02-17 14:20:07.476425"], ["updated_at", "2020-02-17 14:20:07.476425"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"wesley_orn@nitzsche.info", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 273)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "letitia@luettgen.net"], ["encrypted_password", "$2a$04$1eVRCVMgodrIW4oURhPYLuYThPMdan1gM7IOcULS9CRT/8Kn/CVre"], ["name", "Vinita Wiza"], ["username", "Shaniqua Turner"], ["created_at", "2020-02-17 14:20:07.500081"], ["updated_at", "2020-02-17 14:20:07.500081"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 134], ["name", "Mrs. Peggy Predovic"], ["duration", 6], ["created_at", "2020-02-17 14:20:07.500934"], ["updated_at", "2020-02-17 14:20:07.500934"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 134], ["name", "Eusebia Jast"], ["duration", 6], ["created_at", "2020-02-17 14:20:07.501466"], ["updated_at", "2020-02-17 14:20:07.501466"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"letitia@luettgen.net", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "jay@hodkiewicz.co"], ["encrypted_password", "$2a$04$hmoTPSmifKCXfBribWLPDu1grcEKejxBpUXMGAAYXCn3AxcKjuOKW"], ["name", "Shawn Kreiger"], ["username", "Clay Schimmel"], ["created_at", "2020-02-17 14:20:07.511347"], ["updated_at", "2020-02-17 14:20:07.511347"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 135], ["name", "Adolfo Jast"], ["duration", 5], ["created_at", "2020-02-17 14:20:07.512191"], ["updated_at", "2020-02-17 14:20:07.512191"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 135], ["name", "Mr. Roderick Dibbert"], ["duration", 4], ["created_at", "2020-02-17 14:20:07.512758"], ["updated_at", "2020-02-17 14:20:07.512758"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"jay@hodkiewicz.co", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+Processing by Api::V1::SessionsController#create as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started DELETE "/api/v1/logout" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+Processing by Api::V1::SessionsController#destroy as HTML
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 65)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/planners" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+Processing by Api::V1::PlannersController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 87)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "danilo@schulist.org"], ["encrypted_password", "$2a$04$UkXfti4KbwZTZACCypV9Q.4/7CloUS2VYVdEvN236W9T1Dmhf9T4q"], ["name", "Carmelina Heaney I"], ["username", "Alexandria Cummings I"], ["created_at", "2020-02-17 14:20:07.541235"], ["updated_at", "2020-02-17 14:20:07.541235"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 136], ["name", "Jamey Kuhlman"], ["duration", 0], ["created_at", "2020-02-17 14:20:07.542287"], ["updated_at", "2020-02-17 14:20:07.542287"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 136], ["name", "Luisa Harvey"], ["duration", 4], ["created_at", "2020-02-17 14:20:07.542880"], ["updated_at", "2020-02-17 14:20:07.542880"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"danilo@schulist.org", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/planners" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "donald.hickle@sporerbahringer.org"], ["encrypted_password", "$2a$04$RyjLeR8uBNKPz79pbO/fjO8gRavef.ncG0KBhd8jpIajdeSOCvyOi"], ["name", "Mrs. Bobbie Price"], ["username", "Susy Strosin"], ["created_at", "2020-02-17 14:20:07.559333"], ["updated_at", "2020-02-17 14:20:07.559333"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 137], ["name", "Lynelle Von I"], ["duration", 4], ["created_at", "2020-02-17 14:20:07.560204"], ["updated_at", "2020-02-17 14:20:07.560204"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 137], ["name", "Farah Cremin"], ["duration", 6], ["created_at", "2020-02-17 14:20:07.560788"], ["updated_at", "2020-02-17 14:20:07.560788"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "therea_monahan@shanahanreynolds.biz"], ["encrypted_password", "$2a$04$GMmWjOSLe1hL2Z.AB3A7IeWUnYtmfjEYjWmNXwsKJTenphemFzaKW"], ["name", "Riley Lubowitz"], ["username", "Missy Reynolds"], ["created_at", "2020-02-17 14:20:07.569601"], ["updated_at", "2020-02-17 14:20:07.569601"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 138], ["name", "Ron Bahringer"], ["duration", 5], ["created_at", "2020-02-17 14:20:07.570406"], ["updated_at", "2020-02-17 14:20:07.570406"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 138], ["name", "Dr. Victor Mertz"], ["duration", 5], ["created_at", "2020-02-17 14:20:07.570930"], ["updated_at", "2020-02-17 14:20:07.570930"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "kenton@konopelski.co"], ["encrypted_password", "$2a$04$NK/SxGRofpoqLDuD5JNJAO48AXI8XxVoohpcCn/QTH4fL6/KeyJji"], ["name", "Mr. Denice Gottlieb"], ["username", "Cliff Carroll"], ["created_at", "2020-02-17 14:20:07.578606"], ["updated_at", "2020-02-17 14:20:07.578606"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 139], ["name", "Darwin Schinner"], ["duration", 6], ["created_at", "2020-02-17 14:20:07.579247"], ["updated_at", "2020-02-17 14:20:07.579247"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 139], ["name", "Clifton Kirlin"], ["duration", 2], ["created_at", "2020-02-17 14:20:07.579711"], ["updated_at", "2020-02-17 14:20:07.579711"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "vita.gorczany@quigleyhuels.net"], ["encrypted_password", "$2a$04$objhmLTbsQ.h3IvFex0eAe8Kt5C3/.xx7vNAj7Z6sJZjUFcD7GRoK"], ["name", "Mrs. Clarinda Zulauf"], ["username", "Milan Jones"], ["created_at", "2020-02-17 14:20:07.587558"], ["updated_at", "2020-02-17 14:20:07.587558"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 140], ["name", "Yong Spinka"], ["duration", 5], ["created_at", "2020-02-17 14:20:07.588198"], ["updated_at", "2020-02-17 14:20:07.588198"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 140], ["name", "Laurence Grimes"], ["duration", 4], ["created_at", "2020-02-17 14:20:07.588723"], ["updated_at", "2020-02-17 14:20:07.588723"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "vanea_feeney@jones.org"], ["encrypted_password", "$2a$04$e9KYMbrQ9X1llE6jYVsn7eY0OWfoY6l2zKImnvdvu/Xfbut3pU3Ti"], ["name", "Clay Brown"], ["username", "Harrison Daniel"], ["created_at", "2020-02-17 14:20:07.597037"], ["updated_at", "2020-02-17 14:20:07.597037"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 141], ["name", "Marva Wintheiser"], ["duration", 5], ["created_at", "2020-02-17 14:20:07.597769"], ["updated_at", "2020-02-17 14:20:07.597769"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 141], ["name", "Britt Fritsch II"], ["duration", 3], ["created_at", "2020-02-17 14:20:07.598267"], ["updated_at", "2020-02-17 14:20:07.598267"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "ronald_hintz@kozey.net"], ["encrypted_password", "$2a$04$uHeWTJw0slDoGeqrdh2yEeh3qYSTsh6UlDMXGd2jQjGy.Bftn7poK"], ["name", "Felton Farrell"], ["username", "Maryellen Hills"], ["created_at", "2020-02-17 14:20:07.606234"], ["updated_at", "2020-02-17 14:20:07.606234"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 142], ["name", "Stefan Robel"], ["duration", 5], ["created_at", "2020-02-17 14:20:07.606986"], ["updated_at", "2020-02-17 14:20:07.606986"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 142], ["name", "Ms. Walton Weber"], ["duration", 2], ["created_at", "2020-02-17 14:20:07.607615"], ["updated_at", "2020-02-17 14:20:07.607615"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:20:07.621252"], ["updated_at", "2020-02-17 14:20:07.621252"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 1157)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:20:07.628893"], ["updated_at", "2020-02-17 14:20:07.628893"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 777)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:20:07.635990"], ["updated_at", "2020-02-17 14:20:07.635990"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 777)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$xdMENPocy4B09moxZ5vPuejxD0fc.FsxtGfEe6eHkuhK9PufKZQeC"], ["name", "Hershel Walsh"], ["username", "Chantay Botsford"], ["created_at", "2020-02-17 14:20:07.639745"], ["updated_at", "2020-02-17 14:20:07.639745"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 146], ["name", "Julian Wilderman"], ["duration", 6], ["created_at", "2020-02-17 14:20:07.653680"], ["updated_at", "2020-02-17 14:20:07.653680"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 146], ["name", "Mr. Lavelle Hoeger"], ["duration", 1], ["created_at", "2020-02-17 14:20:07.654604"], ["updated_at", "2020-02-17 14:20:07.654604"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:20:07.661621"], ["updated_at", "2020-02-17 14:20:07.661621"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.4ms | Allocations: 782)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$R27tE3c1KxtAcrGJvsLbeu8onMkBHXL6U2FCx10UetB/Inb.fzpEy"], ["name", "Luanna Crona"], ["username", "Luigi Kunze"], ["created_at", "2020-02-17 14:20:07.666246"], ["updated_at", "2020-02-17 14:20:07.666246"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 148], ["name", "Cherilyn Klocko"], ["duration", 1], ["created_at", "2020-02-17 14:20:07.667080"], ["updated_at", "2020-02-17 14:20:07.667080"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 148], ["name", "Alphonso Corkery I"], ["duration", 1], ["created_at", "2020-02-17 14:20:07.667674"], ["updated_at", "2020-02-17 14:20:07.667674"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:20:07 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:20:07.674246"], ["updated_at", "2020-02-17 14:20:07.674246"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.4ms | Allocations: 777)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "armandina.blick@brekke.info"], ["encrypted_password", "$2a$04$Hy.kEsNfpFnt9Kg0m8KJ8ulbcZxxFM9anSSjrekUvWKPeexk3mNG6"], ["name", "Nestor Rogahn"], ["username", "Mrs. Buck Rempel"], ["created_at", "2020-02-17 14:33:38.831781"], ["updated_at", "2020-02-17 14:33:38.831781"]]
+  [1m[36mPlanner Create (0.3ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 150], ["name", "Rocco Langosh"], ["duration", 1], ["created_at", "2020-02-17 14:33:38.833136"], ["updated_at", "2020-02-17 14:33:38.833136"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 150], ["name", "Sherise Osinski Jr."], ["duration", 1], ["created_at", "2020-02-17 14:33:38.833914"], ["updated_at", "2020-02-17 14:33:38.833914"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:33:38 +0000
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "floyd_koelpin@jenkinslockman.org"], ["encrypted_password", "$2a$04$EQLt9ogdXrusMa6o6YmpYOpfhtVlcRStCJADoozKDEvk7esCMNi8q"], ["name", "Raul Padberg"], ["username", "Silas Kuphal"], ["created_at", "2020-02-17 14:33:38.850867"], ["updated_at", "2020-02-17 14:33:38.850867"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 151], ["name", "Dewey Koelpin"], ["duration", 1], ["created_at", "2020-02-17 14:33:38.851575"], ["updated_at", "2020-02-17 14:33:38.851575"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 151], ["name", "Mariano Reichel DDS"], ["duration", 0], ["created_at", "2020-02-17 14:33:38.852129"], ["updated_at", "2020-02-17 14:33:38.852129"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:33:38 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "hunter@heelgreen.info"], ["encrypted_password", "$2a$04$j7tGcZVpTWYoSIo3mF2.zOOYBHiBChilERGdHJ.GUtyjFCFF9R1DK"], ["name", "Mrs. Percy Douglas"], ["username", "Dr. Christopher Langworth"], ["created_at", "2020-02-17 14:33:38.860030"], ["updated_at", "2020-02-17 14:33:38.860030"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 152], ["name", "Tyson Quitzon"], ["duration", 5], ["created_at", "2020-02-17 14:33:38.860923"], ["updated_at", "2020-02-17 14:33:38.860923"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 152], ["name", "Rayford Harber DVM"], ["duration", 3], ["created_at", "2020-02-17 14:33:38.861529"], ["updated_at", "2020-02-17 14:33:38.861529"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:33:38 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:33:38 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started DELETE "/api/v1/logout" for 127.0.0.1 at 2020-02-17 14:33:38 +0000
+Processing by Api::V1::SessionsController#destroy as HTML
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 145)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/planners" for 127.0.0.1 at 2020-02-17 14:33:38 +0000
+Processing by Api::V1::PlannersController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "leighann_boehm@borer.io"], ["encrypted_password", "$2a$04$O017cYdKA50vKPIvktcD9O/qxgxDSv.3obWzBu3cLESoTbFbXHbO2"], ["name", "Kendra Luettgen"], ["username", "Cory Rodriguez MD"], ["created_at", "2020-02-17 14:33:38.890708"], ["updated_at", "2020-02-17 14:33:38.890708"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 153], ["name", "Carli Rolfson DVM"], ["duration", 1], ["created_at", "2020-02-17 14:33:38.892396"], ["updated_at", "2020-02-17 14:33:38.892396"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 153], ["name", "Darline Wunsch"], ["duration", 3], ["created_at", "2020-02-17 14:33:38.892977"], ["updated_at", "2020-02-17 14:33:38.892977"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:33:38 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"leighann_boehm@borer.io", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 185)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/planners" for 127.0.0.1 at 2020-02-17 14:33:38 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "samual_sipes@starkbrekke.org"], ["encrypted_password", "$2a$04$X//b1A5zKOUUVrJEhNKRZe5ncTDjLhKVU3RHxYF1mOe7MdiSCOH4O"], ["name", "Miss Bill Bruen"], ["username", "Mr. Shiela Nitzsche"], ["created_at", "2020-02-17 14:33:38.909961"], ["updated_at", "2020-02-17 14:33:38.909961"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 154], ["name", "Miss Yasmin Rohan"], ["duration", 5], ["created_at", "2020-02-17 14:33:38.910897"], ["updated_at", "2020-02-17 14:33:38.910897"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 154], ["name", "Eloy Hudson"], ["duration", 1], ["created_at", "2020-02-17 14:33:38.911500"], ["updated_at", "2020-02-17 14:33:38.911500"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:33:38 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "adrianna@lockmanquitzon.io"], ["encrypted_password", "$2a$04$aOTomW0Mp28v6eoKWAKFweaqIkjSMtttu6NS/kW9POSqoV.ymash."], ["name", "Mona Daniel I"], ["username", "Mr. Bryan McClure"], ["created_at", "2020-02-17 14:33:38.921369"], ["updated_at", "2020-02-17 14:33:38.921369"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 155], ["name", "Emmanuel Hirthe"], ["duration", 2], ["created_at", "2020-02-17 14:33:38.922332"], ["updated_at", "2020-02-17 14:33:38.922332"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 155], ["name", "Jorge Beier"], ["duration", 4], ["created_at", "2020-02-17 14:33:38.922954"], ["updated_at", "2020-02-17 14:33:38.922954"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:33:38 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "emmanuel@wehnerkirlin.net"], ["encrypted_password", "$2a$04$hGdr5Q9BKgm2lMF6So7tHuoM1T1h3.2wVLOBMYJRTv4ok9G0j9U22"], ["name", "Mrs. Felipe Gleichner"], ["username", "Harriett Bednar I"], ["created_at", "2020-02-17 14:33:38.932666"], ["updated_at", "2020-02-17 14:33:38.932666"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 156], ["name", "Josue Osinski"], ["duration", 3], ["created_at", "2020-02-17 14:33:38.933604"], ["updated_at", "2020-02-17 14:33:38.933604"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 156], ["name", "Donya Becker DDS"], ["duration", 5], ["created_at", "2020-02-17 14:33:38.934210"], ["updated_at", "2020-02-17 14:33:38.934210"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:33:38 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "pamila@gradyschamberger.net"], ["encrypted_password", "$2a$04$y7TbM6JcGI4Na3XX9EQnEOVk4oQyNY1gnspW/USqmtmlxgwIr9iTu"], ["name", "Ghislaine Mante"], ["username", "Conrad Schiller"], ["created_at", "2020-02-17 14:33:38.944016"], ["updated_at", "2020-02-17 14:33:38.944016"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 157], ["name", "Sidney Little"], ["duration", 0], ["created_at", "2020-02-17 14:33:38.944968"], ["updated_at", "2020-02-17 14:33:38.944968"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 157], ["name", "Carrol Funk"], ["duration", 4], ["created_at", "2020-02-17 14:33:38.945585"], ["updated_at", "2020-02-17 14:33:38.945585"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:33:38 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "katheleen.konopelski@leffler.name"], ["encrypted_password", "$2a$04$/n3vtBFjwe1HGzAiJbXZNO560u4dwXSeav4C6jmUu02ze2YMSELBK"], ["name", "Haywood Hamill DDS"], ["username", "Rosamond Sauer"], ["created_at", "2020-02-17 14:33:38.955425"], ["updated_at", "2020-02-17 14:33:38.955425"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 158], ["name", "Celeste Medhurst"], ["duration", 2], ["created_at", "2020-02-17 14:33:38.956361"], ["updated_at", "2020-02-17 14:33:38.956361"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 158], ["name", "Theo Stiedemann"], ["duration", 6], ["created_at", "2020-02-17 14:33:38.956985"], ["updated_at", "2020-02-17 14:33:38.956985"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:33:38 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "doreen_tillman@trantow.org"], ["encrypted_password", "$2a$04$gBo1rFScGj9LK0UI31Jti.crvOg7PMJipigHgN3GxxLPefZnby2Iu"], ["name", "Victor Cartwright"], ["username", "Eloy Altenwerth"], ["created_at", "2020-02-17 14:33:38.966786"], ["updated_at", "2020-02-17 14:33:38.966786"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 159], ["name", "Mr. Val Stroman"], ["duration", 3], ["created_at", "2020-02-17 14:33:38.967710"], ["updated_at", "2020-02-17 14:33:38.967710"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 159], ["name", "Ryann Davis"], ["duration", 0], ["created_at", "2020-02-17 14:33:38.968345"], ["updated_at", "2020-02-17 14:33:38.968345"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:33:38 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:33:38 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:33:38.983774"], ["updated_at", "2020-02-17 14:33:38.983774"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1157)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:33:38 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:33:38.993254"], ["updated_at", "2020-02-17 14:33:38.993254"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.4ms | Allocations: 777)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:33:38 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:33:39.002286"], ["updated_at", "2020-02-17 14:33:39.002286"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 777)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$Elg7PeAMXDjQy50z/G/EnOBbTJxORFJ1kGFLu25bwXTgNs4sK1fj."], ["name", "Moshe Zieme"], ["username", "Kent Zboncak"], ["created_at", "2020-02-17 14:33:39.007192"], ["updated_at", "2020-02-17 14:33:39.007192"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 163], ["name", "Rodger Johnston"], ["duration", 6], ["created_at", "2020-02-17 14:33:39.008041"], ["updated_at", "2020-02-17 14:33:39.008041"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 163], ["name", "Roman Hayes"], ["duration", 1], ["created_at", "2020-02-17 14:33:39.008654"], ["updated_at", "2020-02-17 14:33:39.008654"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:33:39 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:33:39.015768"], ["updated_at", "2020-02-17 14:33:39.015768"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.4ms | Allocations: 777)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$l7Arp590gpApPQ5fzlAa3.cf6oHO27toISiVrS8N1LBalppQlWZQC"], ["name", "Tasia Pfannerstill"], ["username", "Kathyrn Jerde"], ["created_at", "2020-02-17 14:33:39.037113"], ["updated_at", "2020-02-17 14:33:39.037113"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 165], ["name", "Donita Leuschke"], ["duration", 1], ["created_at", "2020-02-17 14:33:39.038017"], ["updated_at", "2020-02-17 14:33:39.038017"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 165], ["name", "Oliva Schowalter V"], ["duration", 0], ["created_at", "2020-02-17 14:33:39.038606"], ["updated_at", "2020-02-17 14:33:39.038606"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:33:39 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:33:39.045467"], ["updated_at", "2020-02-17 14:33:39.045467"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 782)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "robert.crist@conroy.co"], ["encrypted_password", "$2a$04$0Yk8NtMsODLS77/lPcCr/Oz98sqQXK4BJKZaqHimp99WN0IXq3U02"], ["name", "Spencer Powlowski"], ["username", "Dr. Birdie Greenholt"], ["created_at", "2020-02-17 14:34:02.401733"], ["updated_at", "2020-02-17 14:34:02.401733"]]
+  [1m[36mPlanner Create (0.3ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 167], ["name", "Noel Medhurst"], ["duration", 6], ["created_at", "2020-02-17 14:34:02.403060"], ["updated_at", "2020-02-17 14:34:02.403060"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 167], ["name", "Dr. Lazaro Prohaska"], ["duration", 0], ["created_at", "2020-02-17 14:34:02.403780"], ["updated_at", "2020-02-17 14:34:02.403780"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"robert.crist@conroy.co", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 273)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "malik_mueller@becker.biz"], ["encrypted_password", "$2a$04$eFGp8zh1pUBRtNlMC4PbF.n7kOcQaSG2U/rHZa5QHqUTbsWX4ev0C"], ["name", "Ricky Goyette"], ["username", "Rosalia Collins"], ["created_at", "2020-02-17 14:34:02.428213"], ["updated_at", "2020-02-17 14:34:02.428213"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 168], ["name", "Janeen Padberg"], ["duration", 1], ["created_at", "2020-02-17 14:34:02.429169"], ["updated_at", "2020-02-17 14:34:02.429169"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 168], ["name", "Christine DuBuque"], ["duration", 3], ["created_at", "2020-02-17 14:34:02.429776"], ["updated_at", "2020-02-17 14:34:02.429776"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"malik_mueller@becker.biz", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "johana.kub@reinger.com"], ["encrypted_password", "$2a$04$BFDAgm9ssXWUuu1vkGH7cOzn2VTRCIRkvqUF4XuWoYuDo7MZ2WBei"], ["name", "Annette Heidenreich"], ["username", "Louie Buckridge"], ["created_at", "2020-02-17 14:34:02.439542"], ["updated_at", "2020-02-17 14:34:02.439542"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 169], ["name", "Arthur McCullough Sr."], ["duration", 1], ["created_at", "2020-02-17 14:34:02.440336"], ["updated_at", "2020-02-17 14:34:02.440336"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 169], ["name", "Jenae Kozey V"], ["duration", 5], ["created_at", "2020-02-17 14:34:02.440885"], ["updated_at", "2020-02-17 14:34:02.440885"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"johana.kub@reinger.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+Processing by Api::V1::SessionsController#create as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started DELETE "/api/v1/logout" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+Processing by Api::V1::SessionsController#destroy as HTML
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 65)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/planners" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+Processing by Api::V1::PlannersController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 87)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "richard@hartmann.io"], ["encrypted_password", "$2a$04$PABbOcwwq9KUWMrYI4WYXOifNKmRN9OKuIpUkMbgAFP7t/Q8lK3E."], ["name", "Jamison Marks"], ["username", "Andre Rogahn"], ["created_at", "2020-02-17 14:34:02.467641"], ["updated_at", "2020-02-17 14:34:02.467641"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 170], ["name", "Simona Kub"], ["duration", 3], ["created_at", "2020-02-17 14:34:02.468819"], ["updated_at", "2020-02-17 14:34:02.468819"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 170], ["name", "Isaiah Hegmann"], ["duration", 1], ["created_at", "2020-02-17 14:34:02.469383"], ["updated_at", "2020-02-17 14:34:02.469383"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"richard@hartmann.io", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/planners" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "ceola@berge.com"], ["encrypted_password", "$2a$04$1Q9/7/Dr8qW2pfG1wlJEquJJi3Xj3wLC7vbu0Qr8eRb9ZoMVo/qUW"], ["name", "Edmundo Maggio"], ["username", "Williams Kreiger III"], ["created_at", "2020-02-17 14:34:02.485693"], ["updated_at", "2020-02-17 14:34:02.485693"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 171], ["name", "Arlyne Parker"], ["duration", 2], ["created_at", "2020-02-17 14:34:02.486577"], ["updated_at", "2020-02-17 14:34:02.486577"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 171], ["name", "Erin Senger"], ["duration", 1], ["created_at", "2020-02-17 14:34:02.487185"], ["updated_at", "2020-02-17 14:34:02.487185"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "sam.hoeger@macgyverwiza.name"], ["encrypted_password", "$2a$04$dpvfSPj/i1oAL9/nAdaO1Oxs6GjMJMPUeYsr059ulzaiggJ4ee8He"], ["name", "Wendie Kunze Sr."], ["username", "Andrew Aufderhar"], ["created_at", "2020-02-17 14:34:02.495845"], ["updated_at", "2020-02-17 14:34:02.495845"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 172], ["name", "Scarlett Rau"], ["duration", 1], ["created_at", "2020-02-17 14:34:02.496625"], ["updated_at", "2020-02-17 14:34:02.496625"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 172], ["name", "Dale Quigley"], ["duration", 0], ["created_at", "2020-02-17 14:34:02.497157"], ["updated_at", "2020-02-17 14:34:02.497157"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "eddy_rau@turcotte.io"], ["encrypted_password", "$2a$04$6CLAl5ybDz51oqFiPJnmMeTym.KrRjU7Fn.ImVTai2.OExICIYBCS"], ["name", "Ms. Brooks Zieme"], ["username", "Alejandro Bogan"], ["created_at", "2020-02-17 14:34:02.504643"], ["updated_at", "2020-02-17 14:34:02.504643"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 173], ["name", "Drusilla Welch"], ["duration", 6], ["created_at", "2020-02-17 14:34:02.505335"], ["updated_at", "2020-02-17 14:34:02.505335"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 173], ["name", "Gertude Grimes"], ["duration", 2], ["created_at", "2020-02-17 14:34:02.505865"], ["updated_at", "2020-02-17 14:34:02.505865"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "lauryn.keebler@moriette.biz"], ["encrypted_password", "$2a$04$up04CTvOpH79zhi5LnRHpOgTtVbZSZqEDKARuX8trNciSCHyuBu0K"], ["name", "Shayne Medhurst"], ["username", "Mrs. Leif Lakin"], ["created_at", "2020-02-17 14:34:02.513472"], ["updated_at", "2020-02-17 14:34:02.513472"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 174], ["name", "Wesley McDermott"], ["duration", 2], ["created_at", "2020-02-17 14:34:02.514397"], ["updated_at", "2020-02-17 14:34:02.514397"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 174], ["name", "Olivia Koss DVM"], ["duration", 0], ["created_at", "2020-02-17 14:34:02.514874"], ["updated_at", "2020-02-17 14:34:02.514874"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "gladys_brekke@schmeler.io"], ["encrypted_password", "$2a$04$NfzGlGOGxKTj/gYdwXcAC.PsLBBI1dP7KaKUVCzdThXUpTXdetTXO"], ["name", "Elida Haley"], ["username", "Mr. Bertram Cronin"], ["created_at", "2020-02-17 14:34:02.522895"], ["updated_at", "2020-02-17 14:34:02.522895"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 175], ["name", "Mrs. Ron Schneider"], ["duration", 1], ["created_at", "2020-02-17 14:34:02.523655"], ["updated_at", "2020-02-17 14:34:02.523655"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 175], ["name", "Ms. Glen Turcotte"], ["duration", 2], ["created_at", "2020-02-17 14:34:02.524130"], ["updated_at", "2020-02-17 14:34:02.524130"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "alfredo@schmelersawayn.co"], ["encrypted_password", "$2a$04$lDnoFg81yBtVmw2H8lsOQeEnWUkpYWWVJ1/iKqEKGlmq0FIUMnNxO"], ["name", "Spring Fahey"], ["username", "Candida Borer"], ["created_at", "2020-02-17 14:34:02.531443"], ["updated_at", "2020-02-17 14:34:02.531443"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 176], ["name", "Broderick Spinka"], ["duration", 2], ["created_at", "2020-02-17 14:34:02.532129"], ["updated_at", "2020-02-17 14:34:02.532129"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 176], ["name", "Anton Wyman"], ["duration", 0], ["created_at", "2020-02-17 14:34:02.532661"], ["updated_at", "2020-02-17 14:34:02.532661"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:34:02.544261"], ["updated_at", "2020-02-17 14:34:02.544261"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 1157)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:34:02.551779"], ["updated_at", "2020-02-17 14:34:02.551779"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.4ms | Allocations: 777)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:34:02.559003"], ["updated_at", "2020-02-17 14:34:02.559003"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.4ms | Allocations: 777)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$7aNoanhR2LJNN3jd8T5X2udpoSZ66PHNjAz.U8MvXyzu.6snjTutG"], ["name", "Candis Schoen II"], ["username", "Cherly Fritsch"], ["created_at", "2020-02-17 14:34:02.562954"], ["updated_at", "2020-02-17 14:34:02.562954"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 180], ["name", "Mr. Kristofer Mills"], ["duration", 0], ["created_at", "2020-02-17 14:34:02.563635"], ["updated_at", "2020-02-17 14:34:02.563635"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 180], ["name", "Mr. Karolyn Mayer"], ["duration", 3], ["created_at", "2020-02-17 14:34:02.564171"], ["updated_at", "2020-02-17 14:34:02.564171"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:34:02.570102"], ["updated_at", "2020-02-17 14:34:02.570102"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 777)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$ySZzyCl/DRDl6gEIG9LnvOQZTzgw04jkXJb8IHJAIqFZBmwIqiA72"], ["name", "Ronnie Corwin"], ["username", "Signe Wintheiser"], ["created_at", "2020-02-17 14:34:02.573841"], ["updated_at", "2020-02-17 14:34:02.573841"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 182], ["name", "Josephina Marks"], ["duration", 4], ["created_at", "2020-02-17 14:34:02.574685"], ["updated_at", "2020-02-17 14:34:02.574685"]]
+  [1m[36mPlanner Create (0.3ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 182], ["name", "Hipolito Erdman"], ["duration", 5], ["created_at", "2020-02-17 14:34:02.575157"], ["updated_at", "2020-02-17 14:34:02.575157"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:34:02 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:34:02.580492"], ["updated_at", "2020-02-17 14:34:02.580492"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 777)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "michael@turner.org"], ["encrypted_password", "$2a$04$dZlNrF4RETk7uKm9JwvijO1r4tO.mr9dV1SGDOQg0K/NegOl8lN72"], ["name", "Woodrow Huel"], ["username", "Leigh Herman MD"], ["created_at", "2020-02-17 14:38:00.498521"], ["updated_at", "2020-02-17 14:38:00.498521"]]
+  [1m[36mPlanner Create (0.3ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 184], ["name", "Lin Ward"], ["duration", 1], ["created_at", "2020-02-17 14:38:00.499972"], ["updated_at", "2020-02-17 14:38:00.499972"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 184], ["name", "Lottie Lockman"], ["duration", 5], ["created_at", "2020-02-17 14:38:00.500745"], ["updated_at", "2020-02-17 14:38:00.500745"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"michael@turner.org", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 273)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "al_hettinger@west.org"], ["encrypted_password", "$2a$04$kjHebLIjRGr27quQbFU1suMibeMveRVVRsmx/gfv9bZbVZouynL0a"], ["name", "Gregg Jast V"], ["username", "Nedra Bogisich"], ["created_at", "2020-02-17 14:38:00.524199"], ["updated_at", "2020-02-17 14:38:00.524199"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 185], ["name", "Ms. Valentine Steuber"], ["duration", 3], ["created_at", "2020-02-17 14:38:00.525180"], ["updated_at", "2020-02-17 14:38:00.525180"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 185], ["name", "Dr. Blaine Ebert"], ["duration", 4], ["created_at", "2020-02-17 14:38:00.525791"], ["updated_at", "2020-02-17 14:38:00.525791"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"al_hettinger@west.org", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "lovie_huel@johnsondoyle.name"], ["encrypted_password", "$2a$04$4rwKoLFLFCP1E59yMuWJSOsRgLL51a4PInXoL7OkZfj2u/ZagxAMC"], ["name", "Mr. Fabian Murray"], ["username", "Mrs. Jutta Quitzon"], ["created_at", "2020-02-17 14:38:00.536085"], ["updated_at", "2020-02-17 14:38:00.536085"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 186], ["name", "Nakita O'Hara"], ["duration", 6], ["created_at", "2020-02-17 14:38:00.537021"], ["updated_at", "2020-02-17 14:38:00.537021"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 186], ["name", "Alecia Goyette"], ["duration", 1], ["created_at", "2020-02-17 14:38:00.537621"], ["updated_at", "2020-02-17 14:38:00.537621"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"lovie_huel@johnsondoyle.name", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+Processing by Api::V1::SessionsController#create as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started DELETE "/api/v1/logout" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+Processing by Api::V1::SessionsController#destroy as HTML
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 61)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/v1/planners" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+Processing by Api::V1::PlannersController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2538)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/planners" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "maryann_durgan@lebsack.io"], ["encrypted_password", "$2a$04$9vJ4HJ0nsEEDxV3YdNA.3.cIroiIINLK4lk0gs9.iKG5dyXFJai.G"], ["name", "Hal Konopelski I"], ["username", "Camelia Schowalter"], ["created_at", "2020-02-17 14:38:00.581882"], ["updated_at", "2020-02-17 14:38:00.581882"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 187], ["name", "Dave Ernser"], ["duration", 0], ["created_at", "2020-02-17 14:38:00.582849"], ["updated_at", "2020-02-17 14:38:00.582849"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 187], ["name", "Merrill Lowe MD"], ["duration", 2], ["created_at", "2020-02-17 14:38:00.583468"], ["updated_at", "2020-02-17 14:38:00.583468"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "rhona@legros.org"], ["encrypted_password", "$2a$04$Om2/stYul5Jnku6TslyT.eNJMVr8jf8IjBK8AMC4JztE7Fz94V/Ey"], ["name", "Sammie O'Reilly"], ["username", "Mrs. Lawanna Ziemann"], ["created_at", "2020-02-17 14:38:00.592536"], ["updated_at", "2020-02-17 14:38:00.592536"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 188], ["name", "Valentin Wilderman III"], ["duration", 4], ["created_at", "2020-02-17 14:38:00.593372"], ["updated_at", "2020-02-17 14:38:00.593372"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 188], ["name", "Margherita Brakus"], ["duration", 0], ["created_at", "2020-02-17 14:38:00.593984"], ["updated_at", "2020-02-17 14:38:00.593984"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "frederic@gutkowski.info"], ["encrypted_password", "$2a$04$ZA4FoCx/DPWzTumKC8Xoae0kBfr7/Tyvgktl1bNHDAblVrs5Rw9rq"], ["name", "Theressa Crist"], ["username", "Fleta Murazik IV"], ["created_at", "2020-02-17 14:38:00.603812"], ["updated_at", "2020-02-17 14:38:00.603812"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 189], ["name", "Mallie Vandervort"], ["duration", 5], ["created_at", "2020-02-17 14:38:00.604700"], ["updated_at", "2020-02-17 14:38:00.604700"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 189], ["name", "Daniele Zemlak"], ["duration", 3], ["created_at", "2020-02-17 14:38:00.605187"], ["updated_at", "2020-02-17 14:38:00.605187"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "sherman@botsford.org"], ["encrypted_password", "$2a$04$B.Yi/u3q43niHwNkW3Y1feO5pa64v01GUWxnfk7JBCi35wJn82G46"], ["name", "Louanne Lemke"], ["username", "Albert Gulgowski"], ["created_at", "2020-02-17 14:38:00.613487"], ["updated_at", "2020-02-17 14:38:00.613487"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 190], ["name", "Chester Lehner"], ["duration", 5], ["created_at", "2020-02-17 14:38:00.614186"], ["updated_at", "2020-02-17 14:38:00.614186"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 190], ["name", "Daisey Harvey"], ["duration", 2], ["created_at", "2020-02-17 14:38:00.614701"], ["updated_at", "2020-02-17 14:38:00.614701"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "romeo.kreiger@leannon.net"], ["encrypted_password", "$2a$04$Swo5W4UoyFTJgCNLK1a0gu94lPGT2TDhPsvAUazEvOo3ovOerXLyS"], ["name", "Billy Russel"], ["username", "Steven Baumbach"], ["created_at", "2020-02-17 14:38:00.622399"], ["updated_at", "2020-02-17 14:38:00.622399"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 191], ["name", "Lakeshia Bechtelar"], ["duration", 1], ["created_at", "2020-02-17 14:38:00.623090"], ["updated_at", "2020-02-17 14:38:00.623090"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 191], ["name", "Wm Kuhic"], ["duration", 3], ["created_at", "2020-02-17 14:38:00.623624"], ["updated_at", "2020-02-17 14:38:00.623624"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "tomasa_reichert@dietrich.name"], ["encrypted_password", "$2a$04$p7Nzy9xwNb6WztGqYZRz5uIe6BMDQgbtLVtmr/cfCzCqJauX1NrNO"], ["name", "Ms. Leeanna Waters"], ["username", "Precious Yost"], ["created_at", "2020-02-17 14:38:00.631927"], ["updated_at", "2020-02-17 14:38:00.631927"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 192], ["name", "Caitlyn Schneider"], ["duration", 3], ["created_at", "2020-02-17 14:38:00.632655"], ["updated_at", "2020-02-17 14:38:00.632655"]]
+  [1m[36mPlanner Create (0.2ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 192], ["name", "Bernie Weissnat III"], ["duration", 2], ["created_at", "2020-02-17 14:38:00.633141"], ["updated_at", "2020-02-17 14:38:00.633141"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:38:00.646609"], ["updated_at", "2020-02-17 14:38:00.646609"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1156)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:38:00.654508"], ["updated_at", "2020-02-17 14:38:00.654508"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 776)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:38:00.661947"], ["updated_at", "2020-02-17 14:38:00.661947"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 776)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$iiqxtLG7CXFLLihDXVXwI.PLv8NDNIORrkbgFRIA8FS/9QPb2sMVu"], ["name", "Carl Metz"], ["username", "Barton Kihn"], ["created_at", "2020-02-17 14:38:00.665887"], ["updated_at", "2020-02-17 14:38:00.665887"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 196], ["name", "Ms. Kera Bernhard"], ["duration", 4], ["created_at", "2020-02-17 14:38:00.666593"], ["updated_at", "2020-02-17 14:38:00.666593"]]
+  [1m[36mPlanner Create (0.3ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 196], ["name", "Delma Oberbrunner"], ["duration", 0], ["created_at", "2020-02-17 14:38:00.667156"], ["updated_at", "2020-02-17 14:38:00.667156"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:38:00.673601"], ["updated_at", "2020-02-17 14:38:00.673601"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 776)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dan@mail.com"], ["encrypted_password", "$2a$04$7UquNJTP8Yv5vORYZLomE.jnurvVp.ykaVpDIJGwYVIE.SBbl.0/S"], ["name", "Fernando Cremin"], ["username", "Son Morar"], ["created_at", "2020-02-17 14:38:00.679209"], ["updated_at", "2020-02-17 14:38:00.679209"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 198], ["name", "Miss Chloe Bednar"], ["duration", 2], ["created_at", "2020-02-17 14:38:00.680114"], ["updated_at", "2020-02-17 14:38:00.680114"]]
+  [1m[36mPlanner Create (0.1ms)[0m  [1m[32mINSERT INTO "planners" ("user_id", "name", "duration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 198], ["name", "Jeffrey Torp Jr."], ["duration", 5], ["created_at", "2020-02-17 14:38:00.680708"], ["updated_at", "2020-02-17 14:38:00.680708"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2020-02-17 14:38:00 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-02-17 14:38:00.687344"], ["updated_at", "2020-02-17 14:38:00.687344"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.4ms | Allocations: 776)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
