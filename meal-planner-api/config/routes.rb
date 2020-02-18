@@ -19,22 +19,18 @@ Rails.application.routes.draw do
   root to: "home#index"
   
 
-  namespace :api do
-    namespace :v1 do
       # resources :users, only: [:create]
       devise_for :users,
                  path: '',
                  path_names: {
-                   sign_in: 'login',
-                   sign_out: 'logout',
-                   registration: 'signup'
+                   sign_in: 'api/v1/login',
+                   sign_out: 'api/v1/logout',
+                   registration: 'api/v1/signup'
                  },
                  controllers: {
                    sessions: 'api/v1/sessions',
                    registrations: 'api/v1/registrations'
                  }
-    end
-  end
 
   namespace :api do
     namespace :v1 do
