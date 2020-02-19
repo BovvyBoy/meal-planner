@@ -3,6 +3,10 @@ class User < ApplicationRecord
   has_many :recipe_planners, through: :planners
   has_many :recipes, through: :recipe_planners  
 
+  validates :name, presence: true
+  validates :username, presence: true
+  validates :email, presence: true
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   # devise :database_authenticatable, :registerable,
