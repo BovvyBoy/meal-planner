@@ -5721,3 +5721,4 @@ Processing by Api::V1::RegistrationsController#create as JSON
 Completed 201 Created in 103ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 2902)
 
 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
