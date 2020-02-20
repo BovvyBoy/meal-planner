@@ -2,6 +2,7 @@ class SignupAdapter{
 
     constructor(baseAdapter){
         this.baseAdapter = baseAdapter
+        this.baseURL = this.baseAdapter.baseURL
     }
 
     get token(){
@@ -11,4 +12,17 @@ class SignupAdapter{
     get headers(){
         return this.baseAdapter.headers
     }
+
+    async signup(params){
+        const res = await fetch(`${this.baseURL}/api/v1/signup`, {
+            method: 'POST',
+            headers: this.headers,
+            body: JSON.stringify(params)
+        })
+        this.baseAdapter.checkStatus(res)
+        this.baseAdapter.token = res.headers.get('Authorization').split(' ')[1]
+        // return await res.json()
+    }
+
+  
 }

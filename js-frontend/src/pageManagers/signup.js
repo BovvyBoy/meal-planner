@@ -1,15 +1,30 @@
-class SignupPage{
+class SignupPage extends PageManager{
 
-    constructor(container, adapter){
-        this.container = container
-        this.adapter = new SignupAdapter(adapter)
+    initBindingsAndEventListeners(){
+        this.form = this.container.querySelector('#signup-form')
+
+        this.form.addEventListener('submit', this.handleSubmit.bind(this))
+    }
+
+    handleSubmit(e){
+        e.preventDefault()
+        const inputs = Array.from(e.target.querySelectorAll('input'))
+        const [name, username, email, password] = inputs.map(input => input.value)
+        console.log(name, username, email, password)
+        const params = {
+            user: {
+                name, username, email, password
+            }
+        }
+        console.log(params)
+        this.adapter.signup(params)
     }
 
     get staticHTML(){
         return (`
         <h1>Sign Up</h1>
                 
-        <form>
+        <form id="signup-form">
             <div class="form-group">
                 <label for="name">Your Name</label>
                 <input type="text" class="form-control" id="name" placeholder="Please Enter Your Name" required>

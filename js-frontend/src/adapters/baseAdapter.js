@@ -1,6 +1,6 @@
 class BaseAdapter{
 
-    constructor(baseURL){
+    constructor(baseURL = 'http://localhost:3000'){
         this.baseURL = baseURL
         this.token = null
     }
@@ -11,8 +11,14 @@ class BaseAdapter{
          'Content-Type' : 'application/json'
         }
         if(this.token){
-            baseHeaders = { ... baseHeaders, 'Authorization' : `Bearer ${this.token}`
+            baseHeaders = { ...baseHeaders, 'Authorization' : `Bearer ${this.token}`}
         }
         return baseHeaders
+    }
+
+    checkStatus(res){
+        if(res.status < 200 || res.status > 299){
+            throw co = new Error(res.status)
+        }
     }
 }
