@@ -10,7 +10,6 @@ class SignupPage extends PageManager{
         e.preventDefault()
         const inputs = Array.from(e.target.querySelectorAll('input'))
         const [name, username, email, password] = inputs.map(input => input.value)
-        console.log(name, username, email, password)
         const params = {
             user: {
                 name, username, email, password
@@ -46,7 +45,4 @@ class SignupPage extends PageManager{
         </form>`)
     }
 
-    render(){
-        this.container.innerHTML = this.staticHTML
-    }
 }
