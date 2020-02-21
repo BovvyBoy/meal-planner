@@ -22,7 +22,6 @@ class SignupAdapter{
         this.baseAdapter.checkStatus(res)
         this.baseAdapter.token = res.headers.get('authorization').split(' ')[1]
         // return await res.json()
-        console.log(this.baseAdapter.token)
     }
 
   
