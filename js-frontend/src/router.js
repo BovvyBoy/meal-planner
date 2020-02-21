@@ -4,11 +4,17 @@ class Router{
         this.routes = kvpairs
     }
 
-    setRootPage(rootPageKey){
+    set rootPage(rootPageKey){
         this.rootPage = this.routes[rootPageKey]
     }
 
     render(page){
-        this.router[page].render()
+        this.routes[page].render()
+    }
+
+    assignCallback(callback){
+        for(let route in this.routes){
+            this.routes[route].redirect = callback 
+        }
     }
 }

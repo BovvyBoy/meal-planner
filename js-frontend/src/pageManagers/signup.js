@@ -15,7 +15,6 @@ class SignupPage extends PageManager{
                 name, username, email, password
             }
         }
-        console.log(params)
         this.adapter.signup(params)
     }
 
