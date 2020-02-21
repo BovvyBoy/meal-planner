@@ -7,7 +7,7 @@ class Api::V1::RegistrationsController < Devise::RegistrationsController
         rescue ActiceRecord::RecordInvalid => e
             render_resource(e.record)
         rescue ActiceRecord::RecordNotUnique => e
-            err = OpenStruct.new(errors: { users: 'Already Exists'})
+            err = OpenStruct.new(errors: { detail: 'User Already Exists'})
             validation_error(err)
         end
     end

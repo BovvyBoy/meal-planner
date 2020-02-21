@@ -12,6 +12,7 @@ class App {
         })
         // this.router.rootPage = 'welcome'
         const navbar = new Navbar(this.navbarContainer, this.adapter)
+        
         this.router.assignAlertHandler(this.handleAlert.bind(this))
         this.router.assignNavbar(navbar)
         this.router.assignRedirect(this.pageManagerRedirect.bind(this))

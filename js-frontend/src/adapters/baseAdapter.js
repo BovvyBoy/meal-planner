@@ -16,9 +16,12 @@ class BaseAdapter{
         return baseHeaders
     }
 
-    checkStatus(res){
+    async checkStatus(res){
         if(res.status < 200 || res.status > 299){
-            throw co = new Error(res.status)
+            const msg = await res.json()
+            let errorMsg = msg.error.detail
+            if(!errorMsg) {errorMsg = msg.error}
+            throw new Error(errorMsg)
         }
     }
 }
