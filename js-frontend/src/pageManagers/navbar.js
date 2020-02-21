@@ -11,14 +11,15 @@ class Navbar extends PageManager{
 
     initBindingsAndEventListeners(){
 
-        if(this.is_authenticated){
-            this.signupLink = this.container.querySelector('a#signup-link')
-            this.loginLink = this.container.querySelector('a#login-link')
-            this.plannersLink = this.container.querySelector('a#planners-link')
-            this.recipesLink = this.container.querySelector('a#recipes-link')
-            this.aboutLink = this.container.querySelector('a#about-link')
-        }else{
+        this.container.addEventListener('click', this.handleClick.bind(this))
 
+    }
+
+    handleClick(e){
+        if(e.target.tagName === 'A'){
+            e.preventDefault()
+            const route = e.target.id.split('-')[0]
+            if(route !== this.currentPage()) { this.redirect(route) }
         }
     }
 
@@ -26,7 +27,7 @@ class Navbar extends PageManager{
         if(this.is_authenticated){
             return (`
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#">Meal Planner</a>
+                    <a class="navbar-brand" href="#">MealPlanner</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
@@ -42,7 +43,7 @@ class Navbar extends PageManager{
         }else{
             return (`
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#">Meal Planner</a>
+                    <a class="navbar-brand" href="#">MealPlanner</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>

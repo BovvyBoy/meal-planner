@@ -5756,3 +5756,66 @@ Processing by Api::V1::SessionsController#create as JSON
 Completed 200 OK in 121ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 2074)
 
 
+Started POST "/api/v1/login" for ::1 at 2020-02-21 13:25:01 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "lydia@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 98ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 2066)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-02-21 13:54:26 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "lydia@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 99ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 2064)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-02-21 14:51:03 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "lydia@mail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 99ms (ActiveRecord: 0.7ms | Allocations: 1640)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-02-21 14:52:07 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "lydia@mail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 97ms (ActiveRecord: 0.3ms | Allocations: 1539)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-02-21 14:54:14 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "lydia@mail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 102ms (ActiveRecord: 0.3ms | Allocations: 1539)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-02-21 14:54:41 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "lydia@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 109ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1967)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-02-21 15:09:42 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "lydia@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 97ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 2060)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-02-21 15:24:01 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "lydia@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 99ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 2060)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-02-21 15:30:52 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"lydia@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "lydia@mail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 104ms (ActiveRecord: 0.7ms | Allocations: 1638)
+
+

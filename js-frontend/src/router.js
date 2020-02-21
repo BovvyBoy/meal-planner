@@ -2,6 +2,8 @@ class Router{
 
     constructor(kvpairs){
         this.routes = kvpairs
+ 
+        
     }
 
     set rootPage(rootPageKey){
@@ -11,15 +13,34 @@ class Router{
     render(page){
         this.routes[page].render()
         if(this.navbar){ this.navbar.render() }
+        this.currentPage = page
+    }
+
+    assignRedirect(callback){
+        this.assignCallback(callback, 'redirect')
+    }
+
+    assignAlertHandler(callback){
+        this.assignCallback(callback, 'handleAlert')
     }
 
     assignCallback(callback){
         for(let route in this.routes){
             this.routes[route].redirect = callback 
         }
+        if(this.navbar) { this.navbar.redirect = callback }
     }
 
     assignNavbar(navbar){
         this.navbar = navbar
+        this.navbar.currentPage = () => {
+            return this.currentPage
+        }
     }
 }
+
+// for(let route in this.routes){
+//     this.routes[route].currentPage = () => {
+//         this.currentPage
+//     }
+// }
