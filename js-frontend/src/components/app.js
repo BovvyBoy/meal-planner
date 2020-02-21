@@ -9,7 +9,9 @@ class App {
             'planners': new PlannersPage(this.container, this.adapter)
         })
         // this.router.rootPage = 'welcome'
+        const navbar = new Navbar(this.navbarContainer, this.adapter)
         this.router.assignCallback(this.pageManagerRedirect.bind(this))
+        this.router.assignNavbar(navbar)
         this.renderPage('welcome')
     }
 
