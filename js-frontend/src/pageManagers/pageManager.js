@@ -8,6 +8,14 @@ class PageManager{
         return null
     }
 
+    handleError(err){
+        if(err.type === "Authorization Error"){
+            this.redirect('welcome')
+        }else{
+            this.handleAlert(err)
+        }
+    }
+
     render(){
         this.container.innerHTML = this.staticHTML
         this.initBindingsAndEventListeners()

@@ -24,7 +24,7 @@ class SignupPage extends PageManager{
             await this.adapter.signup(params)
             this.redirect('planners')
         }catch(err){
-            this.handleAlert(err, 'danger')
+            this.hanleError(err)
         }
 
     }

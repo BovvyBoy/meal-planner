@@ -18,8 +18,12 @@ class Navbar extends PageManager{
     handleClick(e){
         if(e.target.tagName === 'A'){
             e.preventDefault()
-            const route = e.target.id.split('-')[0]
-            if(route !== this.currentPage()) { this.redirect(route) }
+            if(e.target.id !== 'logout-link'){
+                const route = e.target.id.split('-')[0]
+                if(route !== this.currentPage()) { this.redirect(route) }
+            }else{
+                this.adapter.token = null
+            }
         }
     }
 
@@ -35,7 +39,8 @@ class Navbar extends PageManager{
                     <div class="navbar-nav">
                         <a class="nav-item nav-link" id="planners-link" href="#">Planners <span class="sr-only">(current)</span></a>
                         <a class="nav-item nav-link" id="recipes-link" href="#">Recipes</a>
-                        <a class="nav-item nav-link" id="about-link" href="#">About</a>
+                        <a class="nav-item nav-link" id="createPlanner-link" href="#">New Planner</a>
+                        <a class="nav-item nav-link" id="logout-link" href="#">Log Out</a>
                     </div>
                     </div>
                 </nav>
