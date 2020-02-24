@@ -23,6 +23,7 @@ class Navbar extends PageManager{
                 if(route !== this.currentPage()) { this.redirect(route) }
             }else{
                 this.adapter.token = null
+                this.redirect('welcome')
             }
         }
     }

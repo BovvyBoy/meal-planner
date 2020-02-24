@@ -17,7 +17,7 @@ class PlannersAdapter{
         const res = await fetch(`${this.baseURL}/api/v1/planners`,{
             headers: this.headers
         })
-        this.baseAdapter.checkStatus(res)
+        await this.baseAdapter.checkStatus(res)
         return await res.json()
     }
 

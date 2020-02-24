@@ -6,7 +6,7 @@ class BaseAdapter{
     }
 
     get headers(){
-        const baseHeaders = {
+        let baseHeaders = {
          'Accept': 'application/json',
          'Content-Type' : 'application/json'
         }
@@ -19,6 +19,7 @@ class BaseAdapter{
     async checkStatus(res){
         if(res.status == 401){
             this.token = null
+            const msg = await res.json()
             throw {
                 type: "Authorization Error",
                 msg: "You Are No Longer Authenticated"
