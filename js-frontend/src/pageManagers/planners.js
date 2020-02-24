@@ -21,7 +21,9 @@ class PlannersPage extends PageManager{
     get staticHTML(){
         return(`
             <h1>Your Current Planners</h1>
-        
+
+            <div id="current-planners">
+            </div>
         
         `)
     }

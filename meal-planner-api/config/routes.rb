@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
 
   root to: "home#index"
+  get '/profile' => 'home#profile'
   
 
       # resources :users, only: [:create]
