@@ -13,6 +13,12 @@ class PlannersAdapter{
         return this.baseAdapter.headers
     }
 
+    // async getUser(){
+    //     const res = await fetch(`${this.baseURL}/api/v1/`, {
+    //         headers: this.headers
+    //     })
+    // }
+
     async getPlanners(){
         const res = await fetch(`${this.baseURL}/api/v1/planners`,{
             headers: this.headers

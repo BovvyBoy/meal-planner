@@ -8,6 +8,7 @@ class App {
             'login': new LoginPage(this.pageContainer, this.adapter),
             'signup': new SignupPage(this.pageContainer, this.adapter),
             'planners': new PlannersPage(this.pageContainer, this.adapter),
+            'profile': new ProfilePage(this.pageContainer, this.adapter)
             
         })
         // this.router.rootPage = 'welcome'

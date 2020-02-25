@@ -22,7 +22,7 @@ class SignupPage extends PageManager{
         }
         try{
             await this.adapter.signup(params)
-            this.redirect('planners')
+            this.redirect('profile')
         }catch(err){
             this.hanleError(err)
         }
