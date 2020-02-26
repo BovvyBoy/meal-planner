@@ -13,8 +13,8 @@ class ProfileAdapter{
         return this.baseAdapter.headers
     }
 
-    async getPlanners(){
-        const res = await fetch(`${this.baseURL}/api/v1/planners`,{
+    async getUser(){
+        const res = await fetch(`${this.baseURL}/api/v1/profile`,{
             headers: this.headers
         })
         await this.baseAdapter.checkStatus(res)

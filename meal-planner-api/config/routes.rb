@@ -15,9 +15,13 @@ Rails.application.routes.draw do
       resources :recipes
     end
   end
+ 
+  root to: "api/v1/profile#index"
 
-  root to: "home#index"
-  get '/profile' => 'home#profile'
+
+ 
+  get '/api/v1/profile' => 'api/v1/profile#profile'
+ 
   
 
       # resources :users, only: [:create]
