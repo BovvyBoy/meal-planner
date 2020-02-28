@@ -13,8 +13,8 @@ class PlannersPage extends PageManager{
 
     get staticHTML(){
         return(`
-           
-        
+           <h1>Welcome</h1>
+           ${planners.map(p => p.liAndLinkHTML).join('')}
         `)
     }
 

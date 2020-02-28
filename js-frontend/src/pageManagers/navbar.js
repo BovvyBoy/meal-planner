@@ -16,9 +16,10 @@ class Navbar extends PageManager{
     }
 
     handleClick(e){
+
         if(e.target.tagName === 'A'){
-            e.preventDefault()
             if(e.target.id !== 'logout-link'){
+                e.preventDefault()
                 const route = e.target.id.split('-')[0]
                 if(route !== this.currentPage()) { this.redirect(route) }
             }else{

@@ -13,6 +13,21 @@ class ProfileAdapter{
         return this.baseAdapter.headers
     }
 
+    async updatePlanner(params){
+        const { id, name, duration} = params
+        const url = `${this.baseURL}/api/v1/planners/${id}`
+        const body = {
+            planner: {name, duration}
+        }
+        const res = await fetch(url, {
+            method: 'PATCH',
+            headers: this.headers,
+            body: JSON.stringify(body)
+        })
+        await this.baseAdapter.checkStatus(res)
+        return await res.json()
+    }
+
     async getUser(){
         const res = await fetch(`${this.baseURL}/api/v1/profile`,{
             headers: this.headers
