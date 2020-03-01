@@ -19,10 +19,11 @@ class Planner{
     }
 
     constructor(planner){
-        const {id, name, duration} = planner
+        const {id, name, duration, recipes} = planner
         this.id = id
         this.name = name
         this.duration = duration
+        // this.recipes = recipes.map(r => new Recipe(r))
     }
 
     get formHTML(){

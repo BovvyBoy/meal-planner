@@ -8,7 +8,6 @@ class PlannersPage extends PageManager{
     initBindingsAndEventListeners(){
         return null
     }
-
    
 
     get staticHTML(){
@@ -17,5 +16,7 @@ class PlannersPage extends PageManager{
            ${planners.map(p => p.liAndLinkHTML).join('')}
         `)
     }
+
+
 
 }

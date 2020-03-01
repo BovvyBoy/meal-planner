@@ -52,6 +52,7 @@ class ProfilePage extends PageManager{
         if(e.target.tagName === "A"){
             const plannerId = e.target.dataset.id
             const planner = this.getPlannerById(plannerId)
+            console.log(planner)
             this.renderPlanner(planner)
         }
     }
