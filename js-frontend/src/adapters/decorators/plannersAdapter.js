@@ -19,6 +19,13 @@ class PlannersAdapter{
     //     })
     // }
 
+    async getPlanner(){
+        const res = await fetch(`${this.baseURL}/api/v1/planners`,{
+            headers: this.headers
+        })
+        await this.baseAdapter.checkStatus(res)
+        return await res.json()
+    }
     
 
 

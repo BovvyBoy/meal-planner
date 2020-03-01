@@ -39,7 +39,7 @@ class Navbar extends PageManager{
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link" id="planners-link" href="#">Planners <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" id="profile-link" href="#">Planners <span class="sr-only">(current)</span></a>
                         <a class="nav-item nav-link" id="recipes-link" href="#">Recipes</a>
                         <a class="nav-item nav-link" id="createPlanner-link" href="#">New Planner</a>
                         <a class="nav-item nav-link" id="logout-link" href="#">Log Out</a>

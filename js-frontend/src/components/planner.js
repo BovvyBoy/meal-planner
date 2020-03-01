@@ -19,26 +19,30 @@ class Planner{
     }
 
     constructor(planner){
-        const {id, name, duration, recipes} = planner
+        const {id, name, duration} = planner
         this.id = id
         this.name = name
         this.duration = duration
-        // this.recipes = recipes.map(r => new Recipe(r))
+        this.recipes = []
     }
 
     get formHTML(){
         return Planner.formHTML(this)
     }
 
+    
+
     get showHTML(){
         return (`
             <h2>${this.name}</h2>
             <h3>Recipes:</h3>
-            <h3>Coming Soon...</h3>
+            <ul>${this.recipes.map(r => r.liAndLinkHTML).join('')} </ul>
             <h3>${this.duration} Meals</h3>
             <button data-id=${this.id} id="edit-planner">Edit</button>
         `)
     }
+
+    // this.recipes = this.planner.recipes.map(r => new Recipe(r))
 
     get liAndLinkHTML(){
         return `<li><a href="#" data-id="${this.id}">${this.name}</a></li>`
