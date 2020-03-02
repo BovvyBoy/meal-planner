@@ -23,14 +23,12 @@ class Planner{
         this.id = id
         this.name = name
         this.duration = duration
-        this.recipes = []
+        this.recipes = planner.recipes
     }
 
     get formHTML(){
         return Planner.formHTML(this)
     }
-
-    
 
     get showHTML(){
         return (`
@@ -41,6 +39,24 @@ class Planner{
             <button data-id=${this.id} id="edit-planner">Edit</button>
         `)
     }
+
+    // async getPlanner(plannerId){
+    //     const res = await fetch(`${this.baseURL}/api/v1/planners/${plannerId}`,{
+    //         headers: this.headers
+    //     })
+    //     await this.baseAdapter.checkStatus(res)
+    //     return await res.json()
+    // }
+
+    // async fetchAndRenderPlannerRecipes(){
+    //     try{
+    //         const recipes = await this.getPlanner()
+    //         this.recipes = recipes.map(r => new Recipe(r))
+    //         this.renderRecipes
+    //     }catch(err){
+    //         this.handleError(err)
+    //     }
+    // }
 
     // this.recipes = this.planner.recipes.map(r => new Recipe(r))
 

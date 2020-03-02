@@ -11657,3 +11657,357 @@ Processing by Api::V1::ProfileController#profile as JSON
 Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.9ms | Allocations: 3807)
 
 
+Started GET "/api/v1/planners/1" for ::1 at 2020-03-01 21:01:24 +0000
+Processing by Api::V1::PlannersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 72)
+
+
+Started POST "/api/v1/signup" for ::1 at 2020-03-01 21:03:36 +0000
+Processing by Api::V1::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"name"=>"Mike", "username"=>"Mikey", "email"=>"mike@mail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"name"=>"Mike", "username"=>"Mikey", "email"=>"mike@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/registrations_controller.rb:6:in `create'
+  [1m[36mUser Create (13.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "mike@mail.com"], ["encrypted_password", "$2a$11$VJoXxLy7X.//0DzhT6HTqeJCQ5YhDj/sMJuhYD7kxkCSwO8R.Dnvi"], ["name", "Mike"], ["username", "Mikey"], ["created_at", "2020-03-01 21:03:36.315167"], ["updated_at", "2020-03-01 21:03:36.315167"]]
+  ↳ app/controllers/api/v1/registrations_controller.rb:6:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/registrations_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 13.4ms | Allocations: 4793)
+
+
+  
+NameError (uninitialized constant Api::V1::RegistrationsController::ActiceRecord
+Did you mean?  ActiveRecord):
+  
+app/controllers/api/v1/registrations_controller.rb:7:in `rescue in create'
+app/controllers/api/v1/registrations_controller.rb:4:in `create'
+Started POST "/api/v1/login" for ::1 at 2020-03-01 21:03:54 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dan@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 101ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1961)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-01 21:03:54 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "50cc9b7d-f2cd-4d1e-b175-c6a6e2665aed"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.2ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 1.1ms | Allocations: 3807)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-03-01 21:34:25 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dan@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 98ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 2061)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-01 21:34:25 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "9b6d2374-93f3-458a-a729-e9ca6a013225"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.3ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 1.1ms | Allocations: 3829)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-03-01 21:36:19 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dan@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 99ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1962)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-01 21:36:19 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "a5b30b29-71fe-4e5d-89e1-731ba8e599f5"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.2ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 1.1ms | Allocations: 3807)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-03-01 21:39:31 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dan@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 99ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1962)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-01 21:39:31 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "8bbd2558-2572-4f0c-820e-d4ffcb9d4642"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.2ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 1.1ms | Allocations: 3807)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-03-01 21:40:12 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dan@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 100ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1962)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-01 21:40:12 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "bdae2e58-bb80-4ac0-bb2a-931378f06406"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.2ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.9ms | Allocations: 3807)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-03-01 21:41:30 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dan@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 99ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1962)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-01 21:41:30 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "7a0808df-ab8e-4731-bd0b-c39f8646c626"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.3ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 0.8ms | Allocations: 3807)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-03-01 21:41:45 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dan@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 101ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1962)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-01 21:41:45 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "d3b30c54-e19a-4f9e-803b-6fab0d918298"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.2ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 1.0ms | Allocations: 3807)
+
+
+Started GET "/api/v1/recipes" for ::1 at 2020-03-01 21:41:48 +0000
+Processing by Api::V1::RecipesController#index as JSON
+  Parameters: {"recipe"=>{}}
+  [1m[36mRecipe Load (1.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Completed 200 OK in 49ms (Views: 47.7ms | ActiveRecord: 1.5ms | Allocations: 40873)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-03-01 21:43:06 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dan@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 100ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1966)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-01 21:43:06 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "785d0ba4-7084-433d-8be2-05017cff5399"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.1ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.9ms | Allocations: 3807)
+
+
+Started GET "/api/v1/recipes" for ::1 at 2020-03-01 21:43:08 +0000
+Processing by Api::V1::RecipesController#index as JSON
+  Parameters: {"recipe"=>{}}
+  [1m[36mRecipe Load (1.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 1.4ms | Allocations: 40870)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-01 21:44:46 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "785d0ba4-7084-433d-8be2-05017cff5399"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.1ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.6ms | Allocations: 3808)
+
+
+Started GET "/api/v1/recipes" for ::1 at 2020-03-01 22:18:35 +0000
+Processing by Api::V1::RecipesController#index as JSON
+  Parameters: {"recipe"=>{}}
+  [1m[36mRecipe Load (1.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 1.8ms | Allocations: 40928)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-01 22:19:45 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "785d0ba4-7084-433d-8be2-05017cff5399"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.3ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 6ms (Views: 1.6ms | ActiveRecord: 1.5ms | Allocations: 3869)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-03-01 23:11:36 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dan@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 99ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 2061)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-01 23:11:36 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "aec62fa2-1cd4-43ba-8558-8c59fd368cd2"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.2ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 1.4ms | Allocations: 3829)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-03-01 23:12:53 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dan@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 101ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1962)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-01 23:12:53 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "95ba2a0b-407b-427a-8f2c-b6883e405621"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.2ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 1.1ms | Allocations: 3807)
+
+
+Started GET "/api/v1/recipes" for ::1 at 2020-03-01 23:15:41 +0000
+Processing by Api::V1::RecipesController#index as JSON
+  Parameters: {"recipe"=>{}}
+  [1m[36mRecipe Load (1.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 1.8ms | Allocations: 40873)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-02 15:42:46 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "95ba2a0b-407b-427a-8f2c-b6883e405621"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.3ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 6ms (Views: 1.6ms | ActiveRecord: 1.3ms | Allocations: 3927)
+
+
+Started GET "/api/v1/recipes" for ::1 at 2020-03-02 15:46:56 +0000
+Processing by Api::V1::RecipesController#index as JSON
+  Parameters: {"recipe"=>{}}
+  [1m[36mRecipe Load (2.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `index'
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 2.0ms | Allocations: 40870)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-02 15:53:20 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "95ba2a0b-407b-427a-8f2c-b6883e405621"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.3ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 6ms (Views: 1.6ms | ActiveRecord: 1.4ms | Allocations: 3927)
+
+
+Started PATCH "/api/v1/planners/1" for ::1 at 2020-03-02 15:59:42 +0000
+Processing by Api::V1::PlannersController#update as JSON
+  Parameters: {"planner"=>{"name"=>"Today", "duration"=>"1"}, "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "95ba2a0b-407b-427a-8f2c-b6883e405621"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.3ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/planners_controller.rb:25:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27:in `authorize_user_resource'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 4711)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-03-02 16:26:27 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dan@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 98ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 2065)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-02 16:26:27 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "199a790c-df1a-4d3e-958a-12665a2033cc"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.3ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 7ms (Views: 1.2ms | ActiveRecord: 1.1ms | Allocations: 3829)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-03-02 16:26:53 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dan@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 102ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1962)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-02 16:26:53 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "74f7c8fe-e1f1-430b-8ccf-2f37b5c0d564"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.2ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 1.1ms | Allocations: 3807)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-03-02 16:27:08 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dan@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 100ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1962)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-02 16:27:08 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "05243f42-cafd-4bb7-9df1-d64ddf32d97f"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.1ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 6ms (Views: 1.6ms | ActiveRecord: 0.9ms | Allocations: 3807)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-03-02 16:27:55 +0000
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"dan@mail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dan@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 100ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1962)
+
+
+Started GET "/api/v1/profile" for ::1 at 2020-03-02 16:27:55 +0000
+Processing by Api::V1::ProfileController#profile as JSON
+  Parameters: {"profile"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJwtBlacklist Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "jwt_blacklist" WHERE "jwt_blacklist"."jti" = $1 LIMIT $2[0m  [["jti", "8a28c759-b4c8-4f9c-9b6c-1fa340ea84c8"], ["LIMIT", 1]]
+  [1m[36mPlanner Load (0.1ms)[0m  [1m[34mSELECT "planners".* FROM "planners" WHERE "planners"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `render_resource'
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 1.0ms | Allocations: 3807)
+
+

@@ -13,15 +13,22 @@ class Recipe{
 
     get showHTML(){
         return (`
+            <div>
+                <img src=${this.image}></img>
+            </div>
             <h2>${this.name}</h2>
             <h4>${this.origin}</h4>
             <h5>${this.category}</h5>
             <h5>${this.instructions}</h5>
-            <div>
-                <img src=${this.image}></img>
-            </div>
-           
             <h3>${this.video}</h3>
+            <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Planner</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+            </div>
     
             <button data-id=${this.id} id="edit-planner">Add To Planner</button>
         `)
