@@ -20,4 +20,5 @@ class RecipesAdapter{
         await this.baseAdapter.checkStatus(res)
         return await res.json()
     }
+    
 }

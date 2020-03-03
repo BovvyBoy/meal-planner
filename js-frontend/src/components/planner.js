@@ -19,11 +19,11 @@ class Planner{
     }
 
     constructor(planner){
-        const {id, name, duration} = planner
+        const {id, name, duration, recipes} = planner
         this.id = id
         this.name = name
         this.duration = duration
-        this.recipes = planner.recipes
+        this.recipes = []
     }
 
     get formHTML(){
@@ -40,23 +40,27 @@ class Planner{
         `)
     }
 
-    // async getPlanner(plannerId){
-    //     const res = await fetch(`${this.baseURL}/api/v1/planners/${plannerId}`,{
-    //         headers: this.headers
-    //     })
-    //     await this.baseAdapter.checkStatus(res)
-    //     return await res.json()
-    // }
+    async fetchAndRenderPageResources(){
+        try{
+            const planner = await this.adapter.getPlannerById(this.id)
+            this.recipes = planner.recipes.map(r => new Recipe(r))
+            this.renderPlanner(planner)
+        }catch(err){
+            this.handleError(err)
+        }
+    }
 
-    // async fetchAndRenderPlannerRecipes(){
-    //     try{
-    //         const recipes = await this.getPlanner()
-    //         this.recipes = recipes.map(r => new Recipe(r))
-    //         this.renderRecipes
-    //     }catch(err){
-    //         this.handleError(err)
-    //     }
-    // }
+    renderPlanner(planner){
+        if(planner){
+            this.container.innerHTML = this.showHTML
+            this.plannerBindingsAndEventListeners()
+        }else{
+            this.handleError({
+                type: "404 Planner Not Found",
+                msg: "Planner Not Found"
+            })
+        }
+    }
 
     // this.recipes = this.planner.recipes.map(r => new Recipe(r))
 

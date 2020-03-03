@@ -50,4 +50,12 @@ class ProfileAdapter{
         await this.baseAdapter.checkStatus(res)
         return await res.json()
     }
+
+    async getPlannerById(plannerId){
+        const res = await fetch(`${this.baseURL}/api/v1/planners/${plannerId}`,{
+            headers: this.headers
+        })
+        await this.baseAdapter.checkStatus(res)
+        return await res.json()
+    }
 }

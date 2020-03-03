@@ -10,6 +10,7 @@ class RecipesPage extends PageManager{
         return null
     }
 
+    
 
     get recipesHTML(){
         return(`

@@ -27,15 +27,15 @@ class ProfilePage extends PageManager{
 
     async handlePlannerUpdate(e){
         e.preventDefault()
-        const [id, name, duration] = Array.from(e.target.querySelectorAll('input')).map(i => i.value)
-        const params = { id, name, duration }
+        const [id, name, duration, recipes] = Array.from(e.target.querySelectorAll('input')).map(i => i.value)
+        const params = { id, name, duration, recipes }
         const planner = this.getPlannerById(id)
-        const oldPlanner = new Planner({id, name, duration})
+        const oldPlanner = new Planner({id, name, duration, recipes})
         planner.name = name
         planner.duration = duration
         this.renderPlanner(planner)
         try {
-            const {id, name, duration} = await this.adapter.updatePlanner(params)
+            const {id, name, duration, recipes} = await this.adapter.updatePlanner(params)
            
         }catch(err){
             planner.name = oldPlanner.name
@@ -51,7 +51,7 @@ class ProfilePage extends PageManager{
         if(e.target.tagName === "A"){
             const plannerId = e.target.dataset.id
             const planner = this.getPlannerById(plannerId)
-            this.renderPlanner(planner)
+            planner.renderPlanner(planner)
         }
     }
 
