@@ -22,19 +22,13 @@ class Recipe{
             <h5>${this.instructions}</h5>
             <h3>${this.video}</h3>
             <select id="planner">
-                ${current_user.planners.map(p => p.optAndLinkHTML).join('')}
+                ${this.recipes.planners.map(p => p.optAndLinkHTML).join('')}
             </select>
     
             <button data-id=${this.id} id="edit-planner">Add To Planner</button>
         `)
     }
-
-    // get recipeHTML() {
-    //     return(`
-    //         <h2>${this.name}</h2>
-           
-    //     `)
-    // }
+       
 
     get liAndLinkHTML(){
         return `<li><a href="#" data-id="${this.id}">${this.name}</a></li>`

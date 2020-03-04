@@ -4,6 +4,8 @@ class ApplicationController < ActionController::API
 
     before_action :configure_permitted_parameters, if: :devise_controller?
 
+    # helper_method :current_user
+
     def render_resource(resource, with: nil)
         if resource.errors.empty?
             render json: resource, include: with
@@ -22,6 +24,10 @@ class ApplicationController < ActionController::API
                     }
         }, status: :bad_request
     end
+
+    # def current_user
+    #     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    # end
 
     def authorize_user_resource(resource)
         raise AuthorizationError.new if resource.user != current_user

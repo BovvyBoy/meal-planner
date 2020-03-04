@@ -20,5 +20,13 @@ class RecipesAdapter{
         await this.baseAdapter.checkStatus(res)
         return await res.json()
     }
-    
+
+    async getPlanners(){
+        const res = await fetch(`${this.baseURL}/api/v1/planners`,{
+            headers: this.headers
+        })
+        await this.baseAdapter.checkStatus(res)
+        return await res.json()
+    }
+
 }

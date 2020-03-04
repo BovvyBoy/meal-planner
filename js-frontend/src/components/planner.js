@@ -52,7 +52,7 @@ class Planner{
         return `<li><a href="#" data-id="${this.id}">${this.name}</a></li>`
     }
 
-    get optAndLinkHTML(){
-        return `<option><a href="#">${this.name}</a></option>`
+    get optPlannerskHTML(){
+        return `<option value=${this.id}>${this.name}</option>`
     }
 }

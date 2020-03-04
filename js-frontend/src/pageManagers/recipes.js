@@ -4,13 +4,14 @@ class RecipesPage extends PageManager{
         super(container)
         this.adapter = new RecipesAdapter(adapter)
         this.recipes = []
+        this.planners = []
     }
 
     initBindingsAndEventListeners(){
         return null
     }
 
-    
+
 
     get recipesHTML(){
         return(`
@@ -20,9 +21,6 @@ class RecipesPage extends PageManager{
             </ul>
         `)
     }
-
-    // ${recipes.map(r => r.liAndLinkHTML).join('')}
-
 
     async fetchAndRenderPageResources(){
         try{
@@ -39,20 +37,28 @@ class RecipesPage extends PageManager{
         recipeList.addEventListener('click', this.handleRecipeClick.bind(this))
     }
 
-    // TypeError: recipeList.addEventListener is not a function
-
-
     handleRecipeClick(e){
         e.preventDefault()
         if(e.target.tagName === "A"){
             const recipeId = e.target.dataset.id
             const recipe = this.getRecipeById(recipeId)
+            this.getUserPlanners()
             this.renderRecipe(recipe)
         }
     }
 
     getRecipeById(id){
         return this.recipes.find(r => r.id == id)
+    }
+
+    async getUserPlanners(){
+        try{
+            const planners = await this.adapter.getPlanners()
+            this.planners = planners.map(p => new Planner(p))
+            console.log(this.planners)
+        }catch(err){
+            this.handleError(err)
+        }
     }
 
     renderRecipe(recipe){
