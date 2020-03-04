@@ -19,16 +19,16 @@ class PlannersPage extends PageManager{
 
     // ${planners.map(p => p.liAndLinkHTML).join('')}
 
-    renderPlanner(planner){
-        if(planner){
-            this.container.innerHTML = this.showHTML
-            this.plannerBindingsAndEventListeners()
-        }else{
-            this.handleError({
-                type: "404 Planner Not Found",
-                msg: "Planner Not Found"
-            })
-        }
-    }
+    // renderPlanner(planner){
+    //     if(planner){
+    //         this.container.innerHTML = this.showHTML
+    //         this.plannerBindingsAndEventListeners()
+    //     }else{
+    //         this.handleError({
+    //             type: "404 Planner Not Found",
+    //             msg: "Planner Not Found"
+    //         })
+    //     }
+    // }
 
 }

@@ -21,14 +21,9 @@ class Recipe{
             <h5>${this.category}</h5>
             <h5>${this.instructions}</h5>
             <h3>${this.video}</h3>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Planner</button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </div>
+            <select id="planner">
+                ${current_user.planners.map(p => p.optAndLinkHTML).join('')}
+            </select>
     
             <button data-id=${this.id} id="edit-planner">Add To Planner</button>
         `)

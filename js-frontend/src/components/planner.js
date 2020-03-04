@@ -23,7 +23,11 @@ class Planner{
         this.id = id
         this.name = name
         this.duration = duration
-        this.recipes = []
+        if(recipes){ 
+            this.recipes = recipes.map(r => new Recipe(r))
+        }
+        console.log(this.recipes)
+
     }
 
     get formHTML(){
@@ -40,31 +44,15 @@ class Planner{
         `)
     }
 
-    async fetchAndRenderPageResources(){
-        try{
-            const planner = await this.adapter.getPlannerById(this.id)
-            this.recipes = planner.recipes.map(r => new Recipe(r))
-            this.renderPlanner(planner)
-        }catch(err){
-            this.handleError(err)
-        }
-    }
-
-    renderPlanner(planner){
-        if(planner){
-            this.container.innerHTML = this.showHTML
-            this.plannerBindingsAndEventListeners()
-        }else{
-            this.handleError({
-                type: "404 Planner Not Found",
-                msg: "Planner Not Found"
-            })
-        }
-    }
+    
 
     // this.recipes = this.planner.recipes.map(r => new Recipe(r))
 
     get liAndLinkHTML(){
         return `<li><a href="#" data-id="${this.id}">${this.name}</a></li>`
+    }
+
+    get optAndLinkHTML(){
+        return `<option><a href="#">${this.name}</a></option>`
     }
 }

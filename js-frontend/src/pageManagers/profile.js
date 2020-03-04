@@ -46,12 +46,13 @@ class ProfilePage extends PageManager{
         
     }
 
-    handlePlannerClick(e){
+    async handlePlannerClick(e){
         e.preventDefault()
         if(e.target.tagName === "A"){
-            const plannerId = e.target.dataset.id
-            const planner = this.getPlannerById(plannerId)
-            planner.renderPlanner(planner)
+            const plan = e.target.dataset.id
+            const plannerId = await this.adapter.getPlannerById(plan)
+            this.renderPlanner(plannerId)
+
         }
     }
 
@@ -92,7 +93,8 @@ class ProfilePage extends PageManager{
 
     renderPlanner(planner){
         if(planner){
-            this.container.innerHTML = planner.showHTML
+            const curPlanner = new Planner(planner)
+            this.container.innerHTML = curPlanner.showHTML
             this.plannerBindingsAndEventListeners()
         }else{
             this.handleError({
