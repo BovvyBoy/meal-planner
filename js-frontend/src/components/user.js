@@ -19,4 +19,15 @@ class User{
             </ul>
         `)
     }
+
+    get plannerOptionsHTML(){
+        return (`
+        <select id="planner">
+            ${this.planners.map(p => p.optAndLinkHTML).join('')}
+        </select>
+
+        <button data-id=${this.id} id="edit-planner">Add To Planner</button>
+        `)
+    }
+
 }

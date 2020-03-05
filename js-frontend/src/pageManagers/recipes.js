@@ -3,8 +3,7 @@ class RecipesPage extends PageManager{
     constructor(container, adapter){
         super(container)
         this.adapter = new RecipesAdapter(adapter)
-        this.recipes = []
-        this.planners = []
+        this.recipes = []    
     }
 
     initBindingsAndEventListeners(){
@@ -37,7 +36,7 @@ class RecipesPage extends PageManager{
         recipeList.addEventListener('click', this.handleRecipeClick.bind(this))
     }
 
-    handleRecipeClick(e){
+    async handleRecipeClick(e){
         e.preventDefault()
         if(e.target.tagName === "A"){
             const recipeId = e.target.dataset.id
@@ -55,7 +54,6 @@ class RecipesPage extends PageManager{
         try{
             const planners = await this.adapter.getPlanners()
             this.planners = planners.map(p => new Planner(p))
-            console.log(this.planners)
         }catch(err){
             this.handleError(err)
         }
@@ -64,6 +62,7 @@ class RecipesPage extends PageManager{
     renderRecipe(recipe){
         if(recipe){
             this.container.innerHTML = recipe.showHTML
+            this.container.innerHTML += User.plannerOptionsHTML
         }else{
             this.handleError({
                 type: "404 Planner Not Found",

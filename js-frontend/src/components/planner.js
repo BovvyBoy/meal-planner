@@ -26,7 +26,6 @@ class Planner{
         if(recipes){ 
             this.recipes = recipes.map(r => new Recipe(r))
         }
-        console.log(this.recipes)
 
     }
 
@@ -44,7 +43,6 @@ class Planner{
         `)
     }
 
-    
 
     // this.recipes = this.planner.recipes.map(r => new Recipe(r))
 
