@@ -29,4 +29,12 @@ class RecipesAdapter{
         return await res.json()
     }
 
+    async getUser(){
+        const res = await fetch(`${this.baseURL}/api/v1/profile`,{
+            headers: this.headers
+        })
+        await this.baseAdapter.checkStatus(res)
+        return await res.json()
+    }
+
 }

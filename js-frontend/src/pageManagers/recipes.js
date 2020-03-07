@@ -3,14 +3,13 @@ class RecipesPage extends PageManager{
     constructor(container, adapter){
         super(container)
         this.adapter = new RecipesAdapter(adapter)
-        this.recipes = []    
+        this.recipes = []  
+        this.user = null  
     }
 
     initBindingsAndEventListeners(){
         return null
     }
-
-
 
     get recipesHTML(){
         return(`
@@ -38,16 +37,27 @@ class RecipesPage extends PageManager{
 
     async handleRecipeClick(e){
         e.preventDefault()
-        if(e.target.tagName === "A"){
+        if(e.target.tagName === "A"){   
+            // const user = this.getUser()     
             const recipeId = e.target.dataset.id
             const recipe = this.getRecipeById(recipeId)
-            this.getUserPlanners()
             this.renderRecipe(recipe)
+            console.log(recipe, "HdleRClk")
         }
     }
 
     getRecipeById(id){
         return this.recipes.find(r => r.id == id)
+    }
+
+    async getUser(){
+        try{
+            const user = await this.adapter.getUser()
+            this.user = new User(user)
+            console.log(this.user, "GetUser")
+        }catch(err){
+            this.handleError(err)
+        }
     }
 
     async getUserPlanners(){
@@ -61,15 +71,18 @@ class RecipesPage extends PageManager{
 
     renderRecipe(recipe){
         if(recipe){
+            // console.log(user, "RenrRec")
             this.container.innerHTML = recipe.showHTML
-            this.container.innerHTML += User.plannerOptionsHTML
+            // this.container.innerHTML += user.plannerOptionsHTML
         }else{
             this.handleError({
-                type: "404 Planner Not Found",
-                msg: "Planner Not Found"
+                type: "404 Recipe Not Found",
+                msg: "Recipe Not Found"
             })
         }
     }
+
+   
 
     get renderRecipes(){
         this.container.innerHTML = this.recipesHTML

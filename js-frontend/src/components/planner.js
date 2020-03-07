@@ -3,14 +3,14 @@ class Planner{
     static formHTML(planner){
         return (`
         <form id="${planner ? 'edit' : 'new'}-planner-form">
-            ${planner ? '<input type="hidden" value="' + planner    .id + '">' : ''}
+            ${planner ? '<input type="hidden" value="' + planner.id + '">' : ''}
             <div class="form-group">
                 <label for="name">Planner Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Name" value=${planner ? planner.name : '' } required>
+                <input type="text" class="form-control" id="name" placeholder="Name" value=${planner ? planner.name : '' } required >
             </div>
             <div class="form-group">
                 <label for="duration">Number of Days</label>
-                <input type="number" class="form-control" id="duration" placeholder="Duration" value=${planner ? planner.duration : '' }  required>
+                <input type="number" class="form-control" id="duration" placeholder="Duration" value=${planner ? planner.duration : '' }  >
             </div>
             
             <button type="submit" class="btn btn-primary">${planner ? 'SAVE' : 'CREATE'}</button>
@@ -19,12 +19,14 @@ class Planner{
     }
 
     constructor(planner){
-        const {id, name, duration, recipes} = planner
+        const {id, name, duration, recipes } = planner
         this.id = id
         this.name = name
         this.duration = duration
         if(recipes){ 
             this.recipes = recipes.map(r => new Recipe(r))
+        }else{
+            this.recipes = []
         }
 
     }

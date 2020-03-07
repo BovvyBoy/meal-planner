@@ -41,7 +41,6 @@ class Navbar extends PageManager{
                     <div class="navbar-nav">
                         <a class="nav-item nav-link" id="profile-link" href="#">Planners <span class="sr-only">(current)</span></a>
                         <a class="nav-item nav-link" id="recipes-link" href="#">Recipes</a>
-                        <a class="nav-item nav-link" id="createPlanner-link" href="#">New Planner</a>
                         <a class="nav-item nav-link" id="logout-link" href="#">Log Out</a>
                     </div>
                     </div>

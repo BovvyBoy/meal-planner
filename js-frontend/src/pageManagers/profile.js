@@ -13,6 +13,9 @@ class ProfilePage extends PageManager{
     profileBindingsAndEventListeners(){
         const plannerList = this.container.querySelector('ul')
         plannerList.addEventListener('click', this.handlePlannerClick.bind(this))
+
+        const createPlanner = this.container.querySelector('button')
+        createPlanner.addEventListener('click', this.renderNewForm.bind(this))
     }
 
     plannerBindingsAndEventListeners(){
@@ -25,17 +28,19 @@ class ProfilePage extends PageManager{
         form.addEventListener('submit', this.handlePlannerUpdate.bind(this))
     }
 
+
+
     async handlePlannerUpdate(e){
         e.preventDefault()
-        const [id, name, duration, recipes] = Array.from(e.target.querySelectorAll('input')).map(i => i.value)
-        const params = { id, name, duration, recipes }
+        const [id, name, duration] = Array.from(e.target.querySelectorAll('input')).map(i => i.value)
+        const params = { id, name, duration }
         const planner = this.getPlannerById(id)
-        const oldPlanner = new Planner({id, name, duration, recipes})
+        const oldPlanner = new Planner({id, name, duration})
         planner.name = name
         planner.duration = duration
         this.renderPlanner(planner)
         try {
-            const {id, name, duration, recipes} = await this.adapter.updatePlanner(params)
+            const {id, name, duration} = await this.adapter.updatePlanner(params)
            
         }catch(err){
             planner.name = oldPlanner.name
@@ -52,7 +57,6 @@ class ProfilePage extends PageManager{
             const plan = e.target.dataset.id
             const plannerId = await this.adapter.getPlannerById(plan)
             this.renderPlanner(plannerId)
-
         }
     }
 
@@ -69,6 +73,10 @@ class ProfilePage extends PageManager{
                 msg: "Planner Not Found"
             })
         }
+    }
+
+    renderNewForm(){
+        this.container.innerHTML = Planner.formHTML()
     }
 
     async fetchAndRenderPageResources(){
@@ -94,7 +102,7 @@ class ProfilePage extends PageManager{
     renderPlanner(planner){
         if(planner){
             const curPlanner = new Planner(planner)
-            this.container.innerHTML = curPlanner.showHTML
+            this.container.innerHTML =curPlanner.showHTML
             this.plannerBindingsAndEventListeners()
         }else{
             this.handleError({

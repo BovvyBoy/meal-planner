@@ -21,7 +21,6 @@ class Recipe{
             <h5>${this.category}</h5>
             <h5>${this.instructions}</h5>
             <h3>${this.video}</h3>
-            
         `)
     }
     
