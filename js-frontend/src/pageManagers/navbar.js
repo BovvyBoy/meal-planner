@@ -33,7 +33,7 @@ class Navbar extends PageManager{
         if(this.is_authenticated){
             return (`
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#">MealPlanner</a>
+                    <a id="profile-link" class="navbar-brand" href="#">MealPlanner</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
@@ -49,7 +49,7 @@ class Navbar extends PageManager{
         }else{
             return (`
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#">MealPlanner</a>
+                    <a id="login-link" class="navbar-brand" href="#">MealPlanner</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>

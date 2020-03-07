@@ -29,15 +29,11 @@ class ProfileAdapter{
     }
 
     async createPlanner(params){
-        const { name, duration} = params
         const url = `${this.baseURL}/api/v1/planners`
-        const body = {
-            planner: {name, duration}
-        }
         const res = await fetch(url, {
             method: 'POST',
             headers: this.headers,
-            body: JSON.stringify(body)
+            body: JSON.stringify(params)
         })
         await this.baseAdapter.checkStatus(res)
         return await res.json()

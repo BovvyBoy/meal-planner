@@ -20,6 +20,16 @@ class PlannersAdapter{
         await this.baseAdapter.checkStatus(res)
         return await res.json()
     }
+
+    async createPlanner(params) {
+        const res = await fetch(`${this.baseURL}/planners`, {
+          method: 'POST',
+          headers: this.headers,
+          body: JSON.stringify(params)
+        })
+        await this.baseAdapter.checkStatus(res)
+        return await res.json()
+      }
     
 
 

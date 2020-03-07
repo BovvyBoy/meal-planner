@@ -14,8 +14,8 @@ class ProfilePage extends PageManager{
         const plannerList = this.container.querySelector('ul')
         plannerList.addEventListener('click', this.handlePlannerClick.bind(this))
 
-        const createPlanner = this.container.querySelector('button')
-        createPlanner.addEventListener('click', this.renderNewForm.bind(this))
+        const newPlannerForm = this.container.querySelector('button')
+        newPlannerForm.addEventListener('click', this.renderNewForm.bind(this))
     }
 
     plannerBindingsAndEventListeners(){
@@ -26,6 +26,26 @@ class ProfilePage extends PageManager{
     plannerFormBindingsAndEventListeners(){
         const form = this.container.querySelector('form')
         form.addEventListener('submit', this.handlePlannerUpdate.bind(this))
+    }
+
+    createPlannerBindingsAndEventListeners(){
+        const form = this.container.querySelector('form')
+        form.addEventListener('submit', this.handlePlannerCreate.bind(this))
+    }
+
+    async handlePlannerCreate(e){
+        e.preventDefault()
+        const [name, duration] = Array.from(e.target.querySelectorAll('input')).map(i => i.value)
+        const params = {
+            planner: { name, duration }
+        }
+        
+        try {
+            await this.adapter.createPlanner(params)
+            this.redirect('profile')
+        }catch(err){
+            this.handleError(err)
+        }
     }
 
 
@@ -77,6 +97,7 @@ class ProfilePage extends PageManager{
 
     renderNewForm(){
         this.container.innerHTML = Planner.formHTML()
+        this.createPlannerBindingsAndEventListeners()
     }
 
     async fetchAndRenderPageResources(){
