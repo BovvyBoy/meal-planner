@@ -21,10 +21,23 @@ class Recipe{
             <h5>${this.category}</h5>
             <h5>${this.instructions}</h5>
             <h3>${this.video}</h3>
+
+            <button id=${this.id}>Add To Planner</button>
         `)
     }
-    
-   
+
+    get plannerShowHTML(){
+        return (`
+            <div>
+                <img src=${this.image}></img>
+            </div>
+            <h2>${this.name}</h2>
+            <h4>${this.origin}</h4>
+            <h5>${this.category}</h5>
+            <h5>${this.instructions}</h5>
+            <h3>${this.video}</h3>
+        `)
+    }
 
     get liAndLinkHTML(){
         return `<li><a href="#" data-id="${this.id}">${this.name}</a></li>`

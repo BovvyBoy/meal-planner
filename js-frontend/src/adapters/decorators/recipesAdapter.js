@@ -37,4 +37,25 @@ class RecipesAdapter{
         return await res.json()
     }
 
+    async addRecipeToPlanner(params){
+        const recipe = params.recipe.recipe
+        const plannerId = params.planner.planner
+        const url = `${this.baseURL}/api/v1/planners/${plannerId}`
+        const body = {
+            planner: {
+                recipes: {... recipe}
+            }
+        }
+        console.log(recipe)
+        console.log(plannerId)
+        const res = await fetch(url, {
+            method: 'PATCH',
+            headers: this.headers,
+            body: JSON.stringify(body)
+        })
+        await this.baseAdapter.checkStatus(res)
+        return await res.json()
+        
+    }
+
 }

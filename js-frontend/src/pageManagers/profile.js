@@ -19,6 +19,9 @@ class ProfilePage extends PageManager{
     }
 
     plannerBindingsAndEventListeners(){
+        const recipeList = this.container.querySelector('ul')
+        recipeList.addEventListener('click', this.handleRecipeClick.bind(this))
+
         const editButton = this.container.querySelector('button')
         editButton.addEventListener('click', this.editPlannerClick.bind(this))
     }
@@ -33,13 +36,22 @@ class ProfilePage extends PageManager{
         form.addEventListener('submit', this.handlePlannerCreate.bind(this))
     }
 
+    async handleRecipeClick(e){
+        e.preventDefault()
+        if(e.target.tagName === "A"){
+            const recipe = e.target.dataset.id
+            const recipeId = await this.adapter.getRecipeById(recipe)
+            this.renderRecipe(recipeId)
+        }
+    }
+
     async handlePlannerCreate(e){
         e.preventDefault()
         const [name, duration] = Array.from(e.target.querySelectorAll('input')).map(i => i.value)
         const params = {
             planner: { name, duration }
         }
-        
+
         try {
             await this.adapter.createPlanner(params)
             this.redirect('profile')
@@ -47,8 +59,6 @@ class ProfilePage extends PageManager{
             this.handleError(err)
         }
     }
-
-
 
     async handlePlannerUpdate(e){
         e.preventDefault()
@@ -119,6 +129,19 @@ class ProfilePage extends PageManager{
             <div class="lds-heart"><div></div></div>
         `)
     }
+
+    renderRecipe(recipeId){
+        if(recipeId){
+            const curRecipe = new Recipe(recipeId)
+            this.container.innerHTML = curRecipe.plannerShowHTML
+        }else{
+            this.handleError({
+                type: "404 Planner Not Found",
+                msg: "Planner Not Found"
+            })
+        }
+    }
+
 
     renderPlanner(planner){
         if(planner){

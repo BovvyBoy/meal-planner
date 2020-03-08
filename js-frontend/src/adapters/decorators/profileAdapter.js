@@ -54,4 +54,12 @@ class ProfileAdapter{
         await this.baseAdapter.checkStatus(res)
         return await res.json()
     }
+
+    async getRecipeById(recipe){
+        const res = await fetch(`${this.baseURL}/api/v1/recipes/${recipe}`,{
+            headers: this.headers
+        })
+        await this.baseAdapter.checkStatus(res)
+        return await res.json()
+    }
 }
