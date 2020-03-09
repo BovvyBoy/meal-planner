@@ -54,7 +54,7 @@ class RecipesAdapter{
         const body = {
             planner_recipe: {
                 planner_id: planner.id,
-                recipe_id: recipe.id
+                recipe_id: recipe.id,
             }
         }
         console.log(recipes)
