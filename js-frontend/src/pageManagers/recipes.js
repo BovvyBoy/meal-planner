@@ -94,11 +94,12 @@ class RecipesPage extends PageManager{
 
     async addRecipeToPlanner(e){
         e.preventDefault()
-        const planner = e.target.dataset.id
-        const recipe = JSON.stringify(this.recipe.id)
+        const plannerId = e.target.dataset.id
+        const planner = await this.adapter.getPlannerById(plannerId)
+        const recipe = this.recipe
         const params = {
-            planner: {planner},
-            recipe: {recipe}
+            planner: planner,
+            recipe: recipe
         }
         try{
             await this.adapter.addRecipeToPlanner(params)

@@ -10,25 +10,6 @@ class PlannersPage extends PageManager{
     }
    
 
-    // get staticHTML(){
-    //     return(`
-    //        <h1>Welcome</h1>
-           
-    //     `)
-    // }
-
-    // ${planners.map(p => p.liAndLinkHTML).join('')}
-
-    // renderPlanner(planner){
-    //     if(planner){
-    //         this.container.innerHTML = this.showHTML
-    //         this.plannerBindingsAndEventListeners()
-    //     }else{
-    //         this.handleError({
-    //             type: "404 Planner Not Found",
-    //             msg: "Planner Not Found"
-    //         })
-    //     }
-    // }
+  
 
 }

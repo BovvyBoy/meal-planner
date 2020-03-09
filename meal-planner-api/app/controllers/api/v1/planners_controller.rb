@@ -23,7 +23,8 @@ class Api::V1::PlannersController < ApplicationController
 
     def update
         planner = Planner.find(params[:id])
-        authorize_user_resource(planner)
+        # authorize_user_resource(planner)
+        recipes = planner.recipes
         planner.update(planner_params)
         render_resource(planner)
     end
@@ -38,6 +39,6 @@ class Api::V1::PlannersController < ApplicationController
     private
 
     def planner_params
-        params.require(:planner).permit(:user_id, :name, :duration)
+        params.require(:planner).permit(:user_id, :name, :duration, :recipes)
     end
 end

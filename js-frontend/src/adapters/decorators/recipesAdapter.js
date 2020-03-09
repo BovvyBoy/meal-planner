@@ -29,8 +29,16 @@ class RecipesAdapter{
         return await res.json()
     }
 
-    async getUser(){
-        const res = await fetch(`${this.baseURL}/api/v1/profile`,{
+    // async getUser(){
+    //     const res = await fetch(`${this.baseURL}/api/v1/profile`,{
+    //         headers: this.headers
+    //     })
+    //     await this.baseAdapter.checkStatus(res)
+    //     return await res.json()
+    // }
+
+    async getPlannerById(id){
+        const res = await fetch(`${this.baseURL}/api/v1/planners/${id}`,{
             headers: this.headers
         })
         await this.baseAdapter.checkStatus(res)
@@ -38,18 +46,24 @@ class RecipesAdapter{
     }
 
     async addRecipeToPlanner(params){
-        const recipe = params.recipe.recipe
-        const plannerId = params.planner.planner
-        const url = `${this.baseURL}/api/v1/planners/${plannerId}`
+        const recipe = params.recipe
+        const planner = params.planner
+        const plannerId = planner.id
+        const recipes = planner.recipes
+        const url = `${this.baseURL}/api/v1/planners/${plannerId}/recipes`
         const body = {
-            planner: {
-                recipes: {... recipe}
+            planner_recipe: {
+                planner_id: planner.id,
+                recipe_id: recipe.id
             }
         }
+        console.log(recipes)
         console.log(recipe)
         console.log(plannerId)
+        console.log(body)
+
         const res = await fetch(url, {
-            method: 'PATCH',
+            method: 'POST',
             headers: this.headers,
             body: JSON.stringify(body)
         })
@@ -57,5 +71,33 @@ class RecipesAdapter{
         return await res.json()
         
     }
+
+    // async addRecipeToPlanner(params){
+    //     const recipe = params.recipe
+    //     const planner = params.planner
+    //     const plannerId = planner.id
+    //     const recipes = planner.recipes
+    //     const url = `${this.baseURL}/api/v1/planners/${plannerId}`
+    //     const body = {
+    //         planner: {
+    //             name: planner.name,
+    //             duration: planner.duration,
+    //             recipes: {...recipes, recipe}
+    //         }
+    //     }
+    //     console.log(recipes)
+    //     console.log(recipe)
+    //     console.log(plannerId)
+    //     console.log(body)
+
+    //     const res = await fetch(url, {
+    //         method: 'PATCH',
+    //         headers: this.headers,
+    //         body: JSON.stringify(body)
+    //     })
+    //     await this.baseAdapter.checkStatus(res)
+    //     return await res.json()
+        
+    // }
 
 }
